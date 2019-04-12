@@ -1,83 +1,27 @@
 .preview {
-  background-color: #1d2631;
+  background-color: @base-color;
+  background-image: url("../img/bg-back-mobile@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
 }
 
 .preview__container {
-  width: 280px;
+  position: relative;
+
+  width: 320px;
+  min-height: 395px; /*временно*/
   margin: 0 auto;
   padding: 0 20px;
-
-  background-image: url("../img/bg-back-mobile@1x.jpg");
-  background-repeat: no-repeat;
-  outline: 2px dashed red;
 }
 
-.preview__promo {
-  min-height: 395px; /*временно для сетки*/
-}
-
-.preview__download {
-  min-height: 270px; /*временно для сетки*/
-
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 24px;
-  color: #ffffff;
-  text-align: center;
-}
-
-.preview__text {
-  display: none; /* не заданы стили текста*/
-  margin: 0;
-}
-
-.preview__list {
-  .ls-reset();
-}
-
-.preview__button {
-  display: block;
-
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 18px;
-  color: #ffffff;
-  text-decoration: none;
-  text-align: center;
-
-  border: solid 3px #ffffff;
-  border-radius: 5px;
-
-  &:hover {
-    color: @pink-color;
-
-    background-color: #ffffff;
-  }
-
-  &:active {
-    color: @pink-active-color;
-    background-color: #ffffff;
-  }
+.preview__image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 @media (min-width: @tablet-width) {
-  .preview__container {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    width: 620px;
-    padding: 0 20px;
-    min-height: 620px; /* Временно для сетки */
-  }
-
-  .preview__text {
-    display: block; /* не заданы стили текста*/
-  }
-}
-
-@media (min-width: @desktop-width) {
-  .preview__container {
-    width: 940px;
-    padding: 0 10px;
+  .preview {
+    background: none;
   }
 }

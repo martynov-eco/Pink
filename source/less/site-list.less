@@ -1,6 +1,4 @@
 .site-list {
-  min-height: 255px; /*временно для сетки*/
-
   font-weight: 700;
   font-size: 18px;
   line-height: 32px;
@@ -12,8 +10,15 @@
 }
 
 .site-list__item {
+  display: block;
+  padding-top: 15.5px;
+  padding-bottom: 15.5px;
+
   color: #ffffff;
   text-decoration: none;
+
+  border-top: 1px solid #1d2631;
+
 
   &:hover {
     color: @pink-color;
@@ -24,8 +29,21 @@
   }
 }
 
+
 @media (min-width: @desktop-width) {
   .site-list {
     display: flex;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    text-transform: capitalize;
+
+    background-color: transparent;
+  }
+
+  .site-list__item {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
