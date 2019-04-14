@@ -1,5 +1,4 @@
 .download {
-  min-height: 270px; /*временно для сетки*/
   padding-top: 28px;
 
   font-weight: 300;
@@ -9,7 +8,6 @@
   text-align: center;
 
   background-color: #1d2631;
-  outline: 1px solid red;
 }
 
 .download__container {
@@ -21,7 +19,7 @@
 .download__text {
   display: none;
   width: 220px;
-  margin: 0;
+  margin: 0 auto;
 
   font-size: 40px;
   line-height: 40px;
@@ -99,6 +97,9 @@
 
 @media (min-width: @tablet-width) {
   .download {
+    width: 300px;
+    padding-top: 180px;
+
     background: none;
   }
 
@@ -109,6 +110,11 @@
   }
 
   .download__text {
-    display: block; /* не заданы стили текста*/
+    display: block;
+    padding-bottom: 28px;
+  }
+
+  .download__list {
+    padding-top: 45px;
   }
 }

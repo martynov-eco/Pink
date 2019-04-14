@@ -1,14 +1,19 @@
+.page-header {
+  position: relative;
+  z-index: 10;
+}
+
 .page-header__top {
   display: flex;
   justify-content: space-between;
-  padding-top: 22px;
+  padding-top: 18px;
   padding-right: 19px;
-  padding-bottom: 25px;
+  padding-bottom: 21px;
   padding-left: 20px;
 
   color: #ffffff;
 
-  background-color: rgba(29, 38, 49, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .page-header__button {
@@ -57,15 +62,22 @@
   }
 }
 
+@media (min-width: @tablet-width) {
+  .page-header__top {
+    padding-top: 39.7px;
+    padding-bottom: 42.7px;
+  }
+}
+
 @media (min-width: @desktop-width) {
   .page-header {
-    background-color: rgba(29, 38, 49, 1);
+    background-color: rgba(0, 0, 0, 0.3);
   }
 
   .page-header__container {
     width: 940px;
     margin: 0 auto;
-    padding: 46px 10px 46px 10px;
+    padding: 39.7px 10px 42.7px 10px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
