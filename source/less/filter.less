@@ -1,11 +1,20 @@
 .filter {
   background-color: #f2f2f2;
+  padding-bottom: 41px;
 }
 
 .filter__container {
-  width: 280px;
+  width: 320px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+.filter__img {
+  display: block;
+  width: 280px;
+  height: 374px;
+
+  outline: 2px dashed red;
 }
 
 .filter__list {
@@ -14,14 +23,14 @@
 
 @media (min-width: @tablet-width) {
   .filter__container {
-    width: 620px;
+    width: 660px;
     padding: 0 20px;
   }
 }
 
 @media (min-width: @desktop-width) {
   .filter__container {
-    width: 940px;
+    width: 960px;
     padding: 0 10px;
   }
 }

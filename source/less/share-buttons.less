@@ -1,6 +1,19 @@
+.share-buttons {
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.share-buttons__container {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  margin: 0 auto;
+  padding: 38px 20px 0 20px;
+}
+
 .share-buttons__post,
 .share-buttons__abort {
-  padding: 0;
+  padding-top: 18.5px;
+  padding-bottom: 18.5px;
 
   font-weight: 700;
   font-size: 18px;
@@ -8,10 +21,11 @@
 
   background-color: transparent;
   border: solid 3px;
-  border-radius: 5px;
+  border-radius: 100px;
 }
 
 .share-buttons__post {
+  margin-bottom: 12px;
   color: @pink-color;
 
   border-color: @pink-color;

@@ -7,7 +7,7 @@
 }
 
 .prices__container {
-  width: 280px;
+  width: 320px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -28,16 +28,32 @@
   font-size: 14px;
 }
 
+
 @media (min-width: @tablet-width) {
+  .prices {
+    padding-top: 114px;
+    padding-bottom: 70px;
+
+    background-color: #f2f2f2;
+    background-size: calc(100% + 30px) auto;
+    background-position-x: -15px;
+    background-image: url("../img/bg-triangle-white.svg");
+    background-repeat: no-repeat;
+  }
+
   .prices__container {
-    width: 620px;
+    width: 660px;
     padding: 0 20px;
+  }
+
+  .prices__toggles {
+    display: none;
   }
 }
 
 @media (min-width: @desktop-width) {
   .prices__container {
-    width: 940px;
+    width: 960px;
     padding: 0 10px;
   }
 }
