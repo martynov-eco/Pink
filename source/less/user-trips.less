@@ -8,7 +8,7 @@
 }
 
 .user-trips__container {
-  width: 280px;
+  width: 320px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -26,9 +26,37 @@
 }
 
 .user-trips__label {
+  position: relative;
+
+  padding-left: 40px;
   font-size: 18px;
   line-height: 30px;
   color: @base-color;
+
+  cursor: pointer;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 35px;
+    height: 35px;
+    border: solid 2px #e5e5e5;
+  }
+}
+
+.user-trips__input:checked + .user-trips__checkbox-indicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 35px;
+  height: 35px;
+
+  background: url("../img/icon-yes.svg") no-repeat;
 }
 
 @media (min-width: @tablet-width) {
@@ -37,14 +65,14 @@
   }
 
   .user-trips__container {
-    width: 620px;
+    width: 660px;
     padding: 0 20px;
   }
 }
 
 @media (min-width: @desktop-width) {
   .user-trips__container {
-    width: 940px;
+    width: 960px;
     padding: 0;
   }
 
@@ -57,6 +85,7 @@
   }
 
   .user-trips__item {
-    min-height: 80px; /*временно для сеток*/
+    min-height: 80px;
+    /*временно для сеток*/
   }
 }
