@@ -22,20 +22,21 @@
   margin: 0 auto;
 
   font-size: 40px;
-  line-height: 40px;
+  line-height: 48px;
 }
 
 .download__list {
   display: flex;
-  justify-content: space-around;
-  margin: 0;
-  padding: 32px 0 27px 0;
+  width: 206px;
+  margin: 0 auto;
+  padding: 32px 0 19px 0;
 
   list-style: none;
 }
 
 .download__ios {
   display: block;
+  margin-right: 31px;
   width: 47px;
   height: 56px;
 
@@ -47,6 +48,7 @@
   display: block;
   width: 47px;
   height: 56px;
+  margin-right: 34px;
 
   background-image: url("../img/logo-android.svg");
   background-repeat: no-repeat;
@@ -70,8 +72,8 @@
 
 .download__button {
   display: block;
-  padding-top: 18.5px;
-  padding-bottom: 18.5px;
+  padding-top: 15.5px;
+  padding-bottom: 16.5px;
 
   font-weight: 700;
   font-size: 18px;
@@ -98,7 +100,7 @@
 @media (min-width: @tablet-width) {
   .download {
     width: 300px;
-    padding-top: 180px;
+    padding-top: 205px;
 
     background: none;
   }
@@ -116,5 +118,10 @@
 
   .download__list {
     padding-top: 45px;
+    padding-bottom: 38px;
+  }
+
+  .download__description {
+    font-size: 18px;
   }
 }

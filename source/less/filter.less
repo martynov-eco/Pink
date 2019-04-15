@@ -13,6 +13,7 @@
   display: block;
   width: 280px;
   height: 374px;
+  margin-bottom: 42px;
 
   outline: 2px dashed red;
 }
@@ -54,6 +55,17 @@
 
 .filter__item--active .filter__item-path {
   fill: @pink-color;
+}
+
+.filter__toggle {
+  width: 240px;
+  margin: 0;
+}
+
+@media (max-width: @mobile-width-only) {
+  .filter__toggle:not(.filter__toggle--active) {
+    display: none;
+  }
 }
 
 @media (min-width: @tablet-width) {
