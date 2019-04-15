@@ -18,7 +18,42 @@
 }
 
 .filter__list {
-  .ls-reset();
+  display: flex;
+  justify-content: space-around;
+}
+
+.filter__item {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+
+  background-color: transparent;
+  border: none;
+  opacity: 0.3;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.filter__item:hover .filter__item-path {
+  fill: @pink-color;
+}
+
+.filter__item:active .filter__item-path {
+  fill: @base-color;
+}
+
+.filter__item--active {
+  opacity: 1;
+}
+
+.filter__item--active .filter__item-path {
+  fill: @pink-color;
 }
 
 @media (min-width: @tablet-width) {
