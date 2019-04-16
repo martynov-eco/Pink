@@ -33,6 +33,7 @@
 .contacts__tel,
 .contacts__email,
 .contacts__address {
+  font-weight: 300;
   font-style: normal;
   color: @pink-color;
   text-decoration: none;
@@ -71,24 +72,24 @@
   }
 
   .contacts__item {
-    width: 240px;
+    width: 250px;
     margin-bottom: 45px;
   }
 
-  .contacts__item:first-child {
-    margin-left: 27px;
-    margin-right: 83px;
+  .contacts__item:nth-child(1) {
+    margin-left: 23px;
+    margin-right: 71px;
   }
 
-  .contacts__item:last-child {
-    margin-left: 190px;
+  .contacts__item:nth-child(3) {
+    margin-left: 178px;
   }
 }
 
 @media (min-width: @desktop-width) {
   .contacts___container {
     width: 960px;
-    padding: 0 10px;
+    padding: 68px 10px 0 10px;
   }
 
   .contacts__list {
@@ -99,9 +100,33 @@
     order: 1;
   }
 
+  .contacts__item {
+    width: 260px;
+  }
+
+  .contacts__item:nth-child(1) {
+    margin-right: 60px;
+    margin-left: 20px;
+  }
+
+  .contacts__item:nth-child(2) {
+    margin-right: 0;
+  }
+
+  .contacts__item:nth-child(3) {
+    margin-right: 60px;
+    margin-left: 0;
+  }
+
+  .contacts__title {
+    margin-bottom: 19px;
+  }
+
   .contacts__message {
     width: 465px;
+    margin-bottom: 60px;
 
     font-size: 50px;
+    line-height: 56px;
   }
 }

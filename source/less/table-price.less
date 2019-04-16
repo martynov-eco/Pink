@@ -89,7 +89,7 @@
   background-image: url("../img/icon-no.svg");
 }
 
-@media (min-width: 660px) {
+@media (min-width: @tablet-width) {
   .table-price {
     width: 100%;
   }
@@ -127,5 +127,29 @@
 
   .table-price__feature::before {
     content: "";
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .table-price__header {
+    padding: 19px 0;
+  }
+
+  .table-price__license-type {
+    font-size: 18px;
+  }
+
+  .table-price__license-price {
+    font-size: 24px;
+  }
+
+  .table-price__feature {
+    padding: 21px 20px 13px 22px;
+  }
+
+  .table-price__cell:first-child {
+    padding-left: 20px;
+
+    font-size: 18px;
   }
 }
