@@ -3,14 +3,13 @@
   padding-bottom: 41px;
 }
 
-.filter__container {
+.filter__preview {
   width: 320px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.filter__img {
-  display: block;
+.filter__preview-img {
   width: 280px;
   height: 374px;
   margin-bottom: 42px;
@@ -18,12 +17,19 @@
   outline: 2px dashed red;
 }
 
-.filter__list {
-  display: flex;
-  justify-content: space-around;
+.filter__content {
+  width: 320px;
+  margin: 0 auto;
+  padding: 0 20px 20px 20px;
 }
 
-.filter__item {
+.filter__buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.filter__button {
   width: 48px;
   height: 48px;
   padding: 0;
@@ -41,43 +47,106 @@
   }
 }
 
-.filter__item:hover .filter__item-path {
+.filter__button:hover .filter__button-path {
   fill: @pink-color;
 }
 
-.filter__item:active .filter__item-path {
+.filter__button:active .filter__button-path {
   fill: @base-color;
 }
 
-.filter__item--active {
+.filter__button--active {
   opacity: 1;
 }
 
-.filter__item--active .filter__item-path {
+.filter__button--active .filter__button-path {
   fill: @pink-color;
 }
 
-.filter__toggle {
+.filter__scale-icon .filter__scale-icon-path {
+  fill: @pink-color;
+}
+
+.filter__scale {
+  position: relative;
+
   width: 240px;
-  margin: 0;
+  height: 2px;
+  margin: 0 auto;
+
+  background-color: @base-color;
+}
+
+.filter__scale::before {
+  content: "";
+
+  position: absolute;
+  top: -6px;
+  left: 173px;
+
+  width: 15px;
+  height: 15px;
+
+  border: solid 2px #d22856;
+  border-radius: 50%;
+  background-color: #f2f2f2;
 }
 
 @media (max-width: @mobile-width-only) {
-  .filter__toggle:not(.filter__toggle--active) {
+  .filter__scale-icon {
+    display: none;
+  }
+
+  .filter__scale-wrapper:not(.filter__scale-wrapper--active) {
     display: none;
   }
 }
 
 @media (min-width: @tablet-width) {
   .filter__container {
+    display: flex;
+    flex-wrap: wrap;
     width: 660px;
     padding: 0 20px;
+  }
+
+  .filter__preview {
+    width: auto;
+    margin: 0 20px 0 0;
+    padding: 0;
+  }
+
+  .filter__preview-img {
+    width: 300px;
+    height: 400px;
+  }
+
+  .filter__content {
+    width: 300px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .filter__scale-wrapper {
+    display: flex;
+    padding: 20px 10px 20px 10px;
+    border-bottom: 1px solid #000000;
+  }
+
+  .filter__scale {
+    align-self: center;
+    width: 202px;
+  }
+
+  .filter__buttons {
+    display: none;
   }
 }
 
 @media (min-width: @desktop-width) {
   .filter__container {
     width: 960px;
+    margin: 0 auto;
     padding: 0 10px;
   }
 }
