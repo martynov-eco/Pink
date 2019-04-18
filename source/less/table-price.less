@@ -11,6 +11,8 @@
 }
 
 .table-price__header {
+  position: relative;
+
   padding: 19px 0;
   border-right: 2px solid #e5e5e5;
   font-size: 18px;
@@ -38,6 +40,36 @@
 
 .table-price__header:last-child {
   border-right-color: #283645;
+}
+
+.table-price__header--hit::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 74px;
+  height: 73px;
+
+  background-image: url("../img/bg-hit.svg");
+  background-repeat: no-repeat;
+}
+
+.table-price__header--hit::after {
+  content: attr(data-hit-text);
+
+  position: absolute;
+  top: 10px;
+  left: -10px;
+
+  width: 74px;
+  height: 30px;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  transform: rotate(-45deg);
 }
 
 .table-price__cell {
@@ -100,6 +132,18 @@
 
   .table-price__header {
     padding: 10px 0;
+  }
+
+  .table-price__header--hit::before {
+    width: 61px;
+    height: 61px;
+
+    background-image: url("../img/bg-hit-tablet.svg");
+  }
+
+  .table-price__header--hit::after {
+    top: 4px;
+    left: -16px;
   }
 
   .table-price__license-type {
