@@ -105,15 +105,32 @@
 
 @media (min-width: @desktop-width) {
   .user-contacts__container {
-    width: 960px;
+    width: 940px;
     padding: 0;
+  }
+
+  .user-contacts__fieldset {
+    padding-top: 35px;
+    padding-bottom: 8px;
   }
 
   .user-contacts__list {
     display: flex;
   }
 
+  .user-contacts__item {
+    margin-bottom: 0;
+  }
+
+  .user-contacts__item:first-child {
+    margin-right: 70px;
+  }
+
   .user-contacts__input {
-    width: 371px;
+    width: 375px;
+  }
+
+  .user-contacts__item::after {
+    right: 0;
   }
 }
