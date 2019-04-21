@@ -10,12 +10,14 @@
 .user-app__container {
   width: 320px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 39px 20px 7px 20px;
 }
 
 .user-app__legend {
+  margin-bottom: 36px;
+
   font-size: 14px;
-  line-height: 30px;
+  line-height: 18px;
   color: @pink-color;
   text-align: center;
   text-transform: uppercase;
@@ -25,10 +27,15 @@
   .ls-reset();
 }
 
+.user-app__item {
+  margin-bottom: 35px;
+}
+
 .user-app__label {
   position: relative;
 
-  padding-left: 40px;
+  display: block;
+  padding: 5px 10px 5px 70px;
 
   font-size: 18px;
   line-height: 30px;
@@ -43,8 +50,9 @@
     left: 0;
     top: 0;
 
-    width: 37px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
+
     border: solid 2px #e5e5e5;
     border-radius: 50%;
   }
@@ -52,8 +60,8 @@
 
 .user-app__input:checked + .user-app__radio-indicator {
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 12px;
+  top: 12px;
 
   width: 15px;
   height: 15px;

@@ -59,8 +59,33 @@
 }
 
 @media (min-width: @tablet-width) {
+  .share-buttons {
+    padding: 66px 0 0 0;
+  }
+
   .share-buttons__post,
   .share-buttons__abort {
     width: 260px;
+  }
+
+  .share-buttons__post {
+    margin-bottom: 24px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .share-buttons {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 144px 0 0 0;
+  }
+
+  .share-buttons__post,
+  .share-buttons__abort {
+    width: 184px;
+  }
+
+  .share-buttons__post {
+    margin-bottom: 0;
   }
 }

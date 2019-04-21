@@ -9,21 +9,24 @@
 .user-name__container {
   width: 320px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 35px 20px 24px 20px;
 }
 
 .user-name__label {
+  display: block;
+  margin-bottom: 5px;
+  padding-left: 23px;
+
   font-size: 14px;
   line-height: 30px;
   color: @pink-color;
   text-transform: uppercase;
 }
 
-.user-name__surname,
-.user-name__name,
-.user-name__patronymic {
-  width: 276px;
-  padding: 0;
+.user-name__input {
+  width: 280px;
+  margin-bottom: 17px;
+  padding: 15px 10px 15px 20px;
 
   font-family: inherit;
   font-size: 18px;
@@ -33,9 +36,7 @@
   border: solid 2px #e5e5e5;
 }
 
-.user-name__surname::placeholder,
-.user-name__name::placeholder,
-.user-name__patronymic::placeholder {
+.user-name__input::placeholder {
   color: @base-color;
 }
 
@@ -47,15 +48,15 @@
     padding: 0 20px;
   }
 
-  .user-name__surname {
+  .user-name__input--surname {
     width: 521px;
   }
 
-  .user-name__name {
+  .user-name__input--name {
     width: 561px;
   }
 
-  .user-name__patronymic {
+  .user-name__input--patronymic {
     width: 521px;
   }
 }

@@ -10,12 +10,15 @@
 .user-trips__container {
   width: 320px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 38px 20px 0 20px;
 }
 
 .user-trips__legend {
+  width: 222px;
+  margin: 0 auto 42px auto;
+
   font-size: 14px;
-  line-height: 30px;
+  line-height: 18px;
   color: @pink-color;
   text-align: center;
   text-transform: uppercase;
@@ -25,10 +28,16 @@
   .ls-reset();
 }
 
+.user-trips__item {
+  margin-bottom: 42px;
+}
+
 .user-trips__label {
   position: relative;
 
-  padding-left: 40px;
+  display: block;
+  padding: 5px 10px 5px 70px;
+
   font-size: 18px;
   line-height: 30px;
   color: @base-color;
@@ -42,16 +51,18 @@
     left: 0;
     top: 0;
 
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
+
+    background-color: #ffffff;
     border: solid 2px #e5e5e5;
   }
 }
 
 .user-trips__input:checked + .user-trips__checkbox-indicator {
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 9px;
+  top: 9px;
 
   width: 35px;
   height: 35px;

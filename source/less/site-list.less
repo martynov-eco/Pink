@@ -50,10 +50,24 @@
   }
 
   .site-list__item {
+    position: relative;
+
     padding-top: 0;
     padding-bottom: 0;
 
     border: none;
     box-shadow: none;
+  }
+
+  .site-list__item--current::before {
+    content: "";
+
+    position: absolute;
+    bottom: -10px;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: #ffffff;
   }
 }
