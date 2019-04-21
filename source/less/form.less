@@ -11,8 +11,7 @@
   padding: 0 20px 15px 20px;
 }
 
-.form__message1,
-.form__message2 {
+.form__message {
   margin: 0;
 
   font-size: 14px;
@@ -21,7 +20,7 @@
   text-align: center;
 }
 
-.form__message2 {
+.form__message span {
   display: none;
 }
 
@@ -46,40 +45,65 @@
 }
 
 @media (min-width: @tablet-width) {
+  .form__top-container {
+    width: 660px;
+    margin: 0 auto;
+    padding: 93px 20px 70px 20px;
+  }
+
+  .form__message {
+    width: 490px;
+    margin: 0 auto;
+
+    font-size: 18px;
+  }
+
+  .form__message span {
+    display: inline;
+  }
+
   .form__wrapper {
     display: flex;
     flex-direction: column;
-  }
-
-  .form__top-container {
-    width: 660px;
-    padding: 0 20px;
   }
 
   .form__bottom-container {
     display: flex;
     justify-content: space-between;
     width: 660px;
-    padding: 0 20px;
+    padding: 0 20px 51px 20px;
+  }
+
+  .form__button {
+    width: 300px;
+    margin-bottom: 0;
+  }
+
+  .form__required-message {
+    align-self: center;
   }
 }
 
 @media (min-width: @desktop-width) {
+  .form__top-container {
+    width: 960px;
+    padding: 92px 10px 0 10px
+  }
+
   .form__wrapper {
     flex-direction: row;
     flex-wrap: wrap;
     width: 960px;
     margin: 0 auto;
-    padding: 0 10px;
-  }
-
-  .form__top-container {
-    width: 960px;
-    padding: 0 10px;
+    padding: 72px 10px 0 10px;
   }
 
   .form__bottom-container {
     width: 960px;
     padding: 0 10px;
+  }
+
+  .form__message {
+    width: 760px;
   }
 }

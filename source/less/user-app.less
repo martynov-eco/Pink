@@ -1,16 +1,20 @@
 .user-app {
   order: 2;
-  margin: 0;
-  padding: 0;
 
   background-color: #f2f2f2;
-  border: none;
 }
 
 .user-app__container {
   width: 320px;
   margin: 0 auto;
   padding: 39px 20px 7px 20px;
+}
+
+.user-app__fieldset {
+  margin: 0;
+  padding: 0;
+
+  border: none;
 }
 
 .user-app__legend {
@@ -77,13 +81,38 @@
 
   .user-app__container {
     width: 660px;
-    padding: 0 20px;
+    padding: 0 20px 56px 20px;
+  }
+
+  .user-app__fieldset {
+    padding-bottom: 19px;
+
+    border: 2px solid #f2f2f2;
+  }
+
+  .user-app__legend {
+    margin-bottom: 45px;
+  }
+
+  .user-app__label {
+    position: relative;
+
+    display: block;
+    padding-left: 119px;
+  }
+
+  .user-app__label::before {
+    left: 60px;
+  }
+
+  .user-app__input:checked + .user-app__radio-indicator {
+    left: 72px;
   }
 }
 
 @media (min-width: @desktop-width) {
   .user-app__container {
-    width: 431px;
+    width: 436px;
     padding: 0;
   }
 }

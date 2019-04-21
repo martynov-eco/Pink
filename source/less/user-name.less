@@ -12,6 +12,10 @@
   padding: 35px 20px 24px 20px;
 }
 
+.user-name__list {
+  .ls-reset();
+}
+
 .user-name__label {
   display: block;
   margin-bottom: 5px;
@@ -42,28 +46,63 @@
 
 @media (min-width: @tablet-width) {
   .user-name__container {
-    display: flex;
-    flex-wrap: wrap;
     width: 660px;
-    padding: 0 20px;
+    padding: 0 20px 5px 20px;
+  }
+
+  .user-name__list-item {
+    display: flex;
+    margin-bottom: 52px;
+  }
+
+  .user-name__label {
+    align-self: center;
+    margin-right: 19px;
+    margin-bottom: 5px;
+    padding-left: 0;
+
+    font-size: 14px;
+  }
+
+  .user-name__input {
+    margin-bottom: 0;
   }
 
   .user-name__input--surname {
-    width: 521px;
+    width: 524px;
+    margin-bottom: 0;
   }
 
   .user-name__input--name {
-    width: 561px;
+    width: 565px;
+    margin-bottom: 0;
   }
 
   .user-name__input--patronymic {
-    width: 521px;
+    width: 524px;
+    margin-bottom: 0;
   }
 }
 
 @media (min-width: @desktop-width) {
+  .user-name {
+    margin-right: 34px;
+  }
+
   .user-name__container {
     width: 470px;
-    padding: 0;
+    padding: 13px 0 0 0;
+  }
+
+  .user-name__input--surname {
+    width: 340px;
+  }
+
+  .user-name__input--name {
+    width: 381px;
+  }
+
+  .user-name__input--patronymic {
+    width: 340px;
   }
 }

@@ -35,7 +35,7 @@
           <li><a class="site-list__item" href="index.html">Главная</a></li>
           <li><a class="site-list__item" href="foto.html">Фотографии</a></li>
           <li><a class="site-list__item site-list__item--current">Конкурс</a></li>
-          <li><a class="site-list__item" href="https://htmlacademy.ru/intensive/adaptive">Html academy</a></li>
+          <li><a class="site-list__item" href="https://htmlacademy.ru/intensive/adaptive">HTML academy</a></li>
         </ul>
       </nav>
     </div>
@@ -48,120 +48,137 @@
     </section>
     <section class="form">
       <div class="form__top-container">
-        <p class="form__message1">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу
-          бонусную карту!</p>
-        <p class="form__message2">Пожалуйста, заполните форму ниже:</p>
+        <p class="form__message">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу
+          бонусную карту!&ensp;<span>Пожалуйста, заполните форму ниже:</span></p>
       </div>
       <form class="form__wrapper" action="https://echo.htmlacademy.ru/" method="post">
         <fieldset class="user-name">
           <div class="user-name__container">
-            <label class="user-name__label" for="surname">Фамилия:</label>
-            <input class="user-name__input user-name__input--surname" type="text" name="surname" id="surname"
-              placeholder="Укажите фамилию *">
-            <label class="user-name__label" for="name">Имя:</label>
-            <input class="user-name__input user-name__input--name" type="text" name="name" id="name"
-              placeholder="Введите ваше имя *">
-            <label class="user-name__label" for="patronymic">Отчество:</label>
-            <input class="user-name__input user-name__input--patronymic" type="text" name="patronymic" id="patronymic"
-              placeholder="Ну и отчество тоже">
+            <ul class="user-name__list">
+              <li class="user-name__list-item">
+                <label class="user-name__label" for="surname">Фамилия:</label>
+                <input class="user-name__input user-name__input--surname" type="text" name="surname" id="surname"
+                  placeholder="Укажите фамилию *">
+              </li>
+              <li class="user-name__list-item">
+                <label class="user-name__label" for="name">Имя:</label>
+                <input class="user-name__input user-name__input--name" type="text" name="name" id="name"
+                  placeholder="Введите ваше имя *">
+              </li>
+              <li class="user-name__list-item">
+                <label class="user-name__label" for="patronymic">Отчество:</label>
+                <input class="user-name__input user-name__input--patronymic" type="text" name="patronymic"
+                  id="patronymic" placeholder="Ну и отчество тоже">
+              </li>
+            </ul>
           </div>
         </fieldset>
-        <fieldset class="user-trips">
+        <div class="user-trips">
           <div class="user-trips__container">
-            <legend class="user-trips__legend">Ваши безбашенные достижения в путешествии</legend>
-            <ul class="user-trips__list">
-              <li class="user-trips__item">
-                <label class="user-trips__label">
-                  <input class="user-trips__input visually-hidden" type="checkbox" name="shark" id="shark" checked>
-                  Сделал селфи с акулой
-                  <span class="user-trips__checkbox-indicator"></span>
-                </label>
-              </li>
-              <li class="user-trips__item">
-                <label class="user-trips__label">
-                  <input class="user-trips__input visually-hidden" type="checkbox" name="burn" id="burn" checked>
-                  Обгорел на пляже
-                  <span class="user-trips__checkbox-indicator"></span>
-                </label>
-              </li>
-              <li class="user-trips__item">
-                <label class="user-trips__label">
-                  <input class="user-trips__input visually-hidden" type="checkbox" name="norris" id="norris">
-                  Видел Чака Норриса
-                  <span class="user-trips__checkbox-indicator"></span>
-                </label>
-              </li>
-              <li class="user-trips__item">
-                <label class="user-trips__label">
-                  <input class="user-trips__input visually-hidden" type="checkbox" name="souvenirs" id="souvenirs">
-                  Накупил сувениров
-                  <span class="user-trips__checkbox-indicator"></span>
-                </label>
-              </li>
-              <li class="user-trips__item">
-                <label class="user-trips__label">
-                  <input class="user-trips__input visually-hidden" type="checkbox" name="tower" id="tower" checked>
-                  Удержал башню
-                  <span class="user-trips__checkbox-indicator"></span>
-                </label>
-              </li>
-              <li class="user-trips__item">
-                <label class="user-trips__label">
-                  <input class="user-trips__input visually-hidden" type="checkbox" name="crash" id="crash">
-                  Разгромил отель
-                  <span class="user-trips__checkbox-indicator"></span>
-                </label>
-              </li>
-            </ul>
+            <fieldset class="user-trips__fieldset">
+              <legend class="user-trips__legend">Ваши безбашенные достижения в путешествии</legend>
+              <ul class="user-trips__list">
+                <li class="user-trips__item">
+                  <label class="user-trips__label">
+                    <input class="user-trips__input visually-hidden" type="checkbox" name="shark" id="shark" checked>
+                    Сделал селфи с акулой
+                    <span class="user-trips__checkbox-indicator"></span>
+                  </label>
+                </li>
+                <li class="user-trips__item">
+                  <label class="user-trips__label">
+                    <input class="user-trips__input visually-hidden" type="checkbox" name="burn" id="burn" checked>
+                    Обгорел на пляже
+                    <span class="user-trips__checkbox-indicator"></span>
+                  </label>
+                </li>
+                <li class="user-trips__item">
+                  <label class="user-trips__label">
+                    <input class="user-trips__input visually-hidden" type="checkbox" name="norris" id="norris">
+                    Видел Чака Норриса
+                    <span class="user-trips__checkbox-indicator"></span>
+                  </label>
+                </li>
+                <li class="user-trips__item">
+                  <label class="user-trips__label">
+                    <input class="user-trips__input visually-hidden" type="checkbox" name="souvenirs" id="souvenirs">
+                    Накупил сувениров
+                    <span class="user-trips__checkbox-indicator"></span>
+                  </label>
+                </li>
+                <li class="user-trips__item">
+                  <label class="user-trips__label">
+                    <input class="user-trips__input visually-hidden" type="checkbox" name="tower" id="tower" checked>
+                    Удержал башню
+                    <span class="user-trips__checkbox-indicator"></span>
+                  </label>
+                </li>
+                <li class="user-trips__item">
+                  <label class="user-trips__label">
+                    <input class="user-trips__input visually-hidden" type="checkbox" name="crash" id="crash">
+                    Разгромил отель
+                    <span class="user-trips__checkbox-indicator"></span>
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
           </div>
-        </fieldset>
-        <fieldset class="user-contacts">
+        </div>
+        <div class="user-contacts">
           <div class="user-contacts__container">
-            <ul class="user-contacts__list">
-              <li class="user-contacts__item">
-                <label class="user-contacts__label" for="tel">Номер телефона</label>
-                <input class="user-contacts__input" type="tel" name="tel" id="tel" placeholder="Номер, пожалуйста">
-              </li>
-              <li class="user-contacts__item">
-                <label class="user-contacts__label" for="email">Адрес почты</label>
-                <input class="user-contacts__input" type="email" name="email" id="email" placeholder="Введите почту *">
-              </li>
-            </ul>
+            <fieldset class="user-contacts__fieldset">
+              <legend class="user-contacts__legend">Контактная информация</legend>
+              <ul class="user-contacts__list">
+                <li class="user-contacts__item">
+                  <label class="user-contacts__label" for="tel">Номер телефона</label>
+                  <input class="user-contacts__input" type="tel" name="tel" id="tel" placeholder="Номер, пожалуйста">
+                </li>
+                <li class="user-contacts__item">
+                  <label class="user-contacts__label" for="email">Адрес почты</label>
+                  <input class="user-contacts__input" type="email" name="email" id="email"
+                    placeholder="Введите почту *">
+                </li>
+              </ul>
+            </fieldset>
           </div>
-        </fieldset>
-        <fieldset class="user-app">
+        </div>
+        <div class="user-app">
           <div class="user-app__container">
-            <legend class="user-app__legend">С каким приложением путешествовали?</legend>
-            <ul class="user-app__list">
-              <li class="user-app__item">
-                <label class="user-app__label">
-                  <input class="user-app__input visually-hidden" type="radio" name="app-source" id="ios" checked>
-                  Pink для iOS
-                  <span class="user-app__radio-indicator"></span>
-                </label>
-              </li>
-              <li class="user-app__item">
-                <label class="user-app__label">
-                  <input class="user-app__input visually-hidden" type="radio" name="app-source" id="android">
-                  Pink на Android
-                  <span class="user-app__radio-indicator"></span>
-                </label>
-              </li>
-              <li class="user-app__item">
-                <label class="user-app__label">
-                  <input class="user-app__input visually-hidden" type="radio" name="app-source" id="windows-phone">
-                  Windows Phone
-                  <span class="user-app__radio-indicator"></span>
-                </label>
-              </li>
-            </ul>
+            <fieldset class="user-app__fieldset">
+              <legend class="user-app__legend">С каким приложением путешествовали?</legend>
+              <ul class="user-app__list">
+                <li class="user-app__item">
+                  <label class="user-app__label">
+                    <input class="user-app__input visually-hidden" type="radio" name="app-source" id="ios" checked>
+                    Pink для iOS
+                    <span class="user-app__radio-indicator"></span>
+                  </label>
+                </li>
+                <li class="user-app__item">
+                  <label class="user-app__label">
+                    <input class="user-app__input visually-hidden" type="radio" name="app-source" id="android">
+                    Pink на Android
+                    <span class="user-app__radio-indicator"></span>
+                  </label>
+                </li>
+                <li class="user-app__item">
+                  <label class="user-app__label">
+                    <input class="user-app__input visually-hidden" type="radio" name="app-source" id="windows-phone">
+                    Windows Phone
+                    <span class="user-app__radio-indicator"></span>
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
           </div>
-        </fieldset>
+        </div>
         <div class="user-emotions">
           <div class="user-emotions__container">
-            <label class="user-emotions__label" for="emotions">Опишите свои эмоции</label>
-            <textarea class="user-emotions__textarea" name="emo" id="emo"
-              placeholder="Можно прям в красках, не стесняясь в выражениях"></textarea>
+            <div class="user-emotions__field">
+              <label class="user-emotions__label" for="emotions">Опишите свои эмоции</label>
+              <textarea class="user-emotions__textarea" name="emo" id="emo"
+                placeholder="Можно прям в красках, не стесняясь в выражениях"></textarea>
+            </div>
           </div>
         </div>
         <div class="form__bottom-container">
