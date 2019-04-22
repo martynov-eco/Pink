@@ -1,16 +1,33 @@
+.page-footer {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
 .page-footer__container {
-  width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.page-footer__social-list {
-  .ls-reset();
+.page-footer__logo {
+  margin-bottom: 35px;
 }
 
-.page-footer__social-tw,
-.page-footer__social-fb,
-.page-footer__social-pm {
+.page-footer__social-list {
+  display: flex;
+  margin: 0 0 38px 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.page-footer__social {
+  width: 52px;
+  height: 52px;
+
   border: solid 3px rgba(40, 54, 69, 0.1);
   border-radius: 50%;
 
@@ -19,40 +36,108 @@
   }
 
   &:active {
-    opacity: 10%;
+    opacity: 0.1;
   }
 }
 
+.page-footer__social--fb {
+  margin-left: 11px;
+  margin-right: 11px;
+}
+
 .page-footer__developers {
+  display: flex;
+
   text-align: center;
 }
 
 .page-footer__developers-text {
+  margin: 5px 15px 0 0;
+
   font-size: 14px;
   line-height: 18px;
   color: @base-color;
 }
+
+.page-footer__developers-link {
+  align-self: center;
+}
+
+.page-footer__developers-link path {
+  fill: @pink-color;
+}
+
+.page-footer__developers-link:hover path {
+  fill: @base-color;
+}
+
+.page-footer__developers-link:active path {
+  fill: rgba(40, 54, 69, 0.3);
+}
+
 
 .page-footer--index {
   display: none;
 }
 
 @media (min-width: @tablet-width) {
+  .page-footer {
+    padding-top: 36px;
+    padding-bottom: 39px;
+  }
+
   .page-footer__container {
-    display: flex;
-    justify-content: space-between;
-    width: 620px;
+    flex-direction: row;
+    align-items: center;
+    width: 660px;
     padding: 0 20px;
   }
+
+  .page-footer__logo {
+    margin-right: 72px;
+    margin-bottom: 6px;
+  }
+
+  .page-footer__social-list {
+    margin: 0 auto 0 0;
+  }
+
+  .page-footer__social--tw {
+    margin-right: 11px;
+  }
+
+  .page-footer__social--fb {
+    margin-left: 0;
+  }
+
 
   .page-footer--index {
     display: flex;
   }
+
+  .page-footer__developers {
+    margin-top: 12px;
+  }
 }
 
 @media (min-width: @desktop-width) {
+  .page-footer {
+    padding-top: 53px;
+    padding-bottom: 59px;
+  }
+
   .page-footer__container {
-    width: 940px;
-    padding: 0 10px;
+    width: 960px;
+    padding: 15px 10px 0 10px;
+  }
+
+  .page-footer__logo {
+    margin-right: 238px;
+  }
+
+  .page-footer__developers-text {
+    margin: 5px 15px 0 0;
+
+    font-size: 18px;
   }
 }

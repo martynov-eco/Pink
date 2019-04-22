@@ -1,21 +1,28 @@
 .user-trips {
   order: 4;
-  margin: 0;
-  padding: 0;
 
   background-color: #f2f2f2;
-  border: none;
 }
 
 .user-trips__container {
-  width: 280px;
+  width: 320px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 38px 20px 0 20px;
+}
+
+.user-trips__fieldset {
+  margin: 0;
+  padding: 0;
+
+  border: none;
 }
 
 .user-trips__legend {
+  width: 222px;
+  margin: 0 auto 42px auto;
+
   font-size: 14px;
-  line-height: 30px;
+  line-height: 18px;
   color: @pink-color;
   text-align: center;
   text-transform: uppercase;
@@ -25,10 +32,54 @@
   .ls-reset();
 }
 
+.user-trips__item {
+  margin-bottom: 42px;
+}
+
 .user-trips__label {
+  position: relative;
+
+  display: block;
+  padding: 5px 10px 5px 70px;
+
   font-size: 18px;
   line-height: 30px;
   color: @base-color;
+
+  cursor: pointer;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 40px;
+    height: 40px;
+
+    background-color: #ffffff;
+    border: solid 2px #e5e5e5;
+  }
+}
+
+.user-trips__label:hover::before {
+  border-color: @base-color;
+}
+
+.user-trips__label:active::before {
+  border-color: @pink-color;
+}
+
+.user-trips__input:checked + .user-trips__checkbox-indicator {
+  position: absolute;
+  left: 9px;
+  top: 9px;
+
+  width: 35px;
+  height: 35px;
+
+  background: url("../img/icon-check.svg") no-repeat;
 }
 
 @media (min-width: @tablet-width) {
@@ -37,26 +88,95 @@
   }
 
   .user-trips__container {
-    width: 620px;
-    padding: 0 20px;
+    width: 660px;
+    padding: 53px 20px 57px 20px;
+  }
+
+  .user-trips__fieldset {
+    padding-top: 3px;
+    padding-bottom: 7px;
+
+    border: 2px solid #e5e5e5;
+  }
+
+  .user-trips__legend {
+    width: auto;
+  }
+
+  .user-trips__label {
+    padding-left: 117px;
+  }
+
+  .user-trips__label::before {
+    left: 58px;
+  }
+
+  .user-trips__input:checked + .user-trips__checkbox-indicator {
+    left: 67px;
+    top: 11px;
   }
 }
 
 @media (min-width: @desktop-width) {
   .user-trips__container {
     width: 940px;
-    padding: 0;
+    padding: 56px 0 0 0;
+  }
+
+  .user-trips__fieldset {
+    padding-top: 3px;
+    padding-bottom: 14px;
+    padding-left: 58px;
   }
 
   .user-trips__list {
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
     align-items: flex-start;
-    height: 228px;
+    margin-left: -40px;
   }
 
   .user-trips__item {
-    min-height: 80px; /*временно для сеток*/
+    width: 260px;
+    margin-left: 40px;
+    margin-bottom: 42px;
+  }
+
+  .user-trips__item:nth-child(1) {
+    order: 1;
+  }
+
+  .user-trips__item:nth-child(2) {
+    order: 4;
+  }
+
+  .user-trips__item:nth-child(3) {
+    order: 2;
+  }
+
+  .user-trips__item:nth-child(4) {
+    order: 5;
+  }
+
+  .user-trips__item:nth-child(5) {
+    order: 3;
+  }
+
+  .user-trips__item:nth-child(6) {
+    order: 6;
+  }
+
+  .user-trips__label {
+    padding-left: 59px;
+    padding-right: 0;
+  }
+
+  .user-trips__label::before {
+    left: 0;
+  }
+
+  .user-trips__input:checked + .user-trips__checkbox-indicator {
+    left: 9px;
+    top: 11px;
   }
 }

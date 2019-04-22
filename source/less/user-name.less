@@ -7,23 +7,30 @@
 }
 
 .user-name__container {
-  width: 280px;
+  width: 320px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 35px 20px 24px 20px;
+}
+
+.user-name__list {
+  .ls-reset();
 }
 
 .user-name__label {
+  display: block;
+  margin-bottom: 5px;
+  padding-left: 23px;
+
   font-size: 14px;
   line-height: 30px;
   color: @pink-color;
   text-transform: uppercase;
 }
 
-.user-name__surname,
-.user-name__name,
-.user-name__patronymic {
-  width: 276px;
-  padding: 0;
+.user-name__input {
+  width: 280px;
+  margin-bottom: 17px;
+  padding: 15px 10px 15px 20px;
 
   font-family: inherit;
   font-size: 18px;
@@ -31,38 +38,81 @@
   color: @base-color;
 
   border: solid 2px #e5e5e5;
+
+  &:hover {
+    border-color: @base-color;
+  }
+
+  &:focus {
+    border-color: @pink-color;
+    outline: none;
+  }
 }
 
-.user-name__surname::placeholder,
-.user-name__name::placeholder,
-.user-name__patronymic::placeholder {
+.user-name__input::placeholder {
   color: @base-color;
 }
 
 @media (min-width: @tablet-width) {
   .user-name__container {
+    width: 660px;
+    padding: 0 20px 5px 20px;
+  }
+
+  .user-name__list-item {
     display: flex;
-    flex-wrap: wrap;
-    width: 620px;
-    padding: 0 20px;
+    margin-bottom: 52px;
   }
 
-  .user-name__surname {
-    width: 521px;
+  .user-name__label {
+    align-self: center;
+    margin-right: 19px;
+    margin-bottom: 5px;
+    padding-left: 0;
+
+    font-size: 14px;
   }
 
-  .user-name__name {
-    width: 561px;
+  .user-name__input {
+    margin-bottom: 0;
   }
 
-  .user-name__patronymic {
-    width: 521px;
+  .user-name__input--surname {
+    width: 524px;
+    margin-bottom: 0;
+  }
+
+  .user-name__input--name {
+    width: 565px;
+    margin-bottom: 0;
+  }
+
+  .user-name__input--patronymic {
+    width: 524px;
+    margin-bottom: 0;
   }
 }
 
 @media (min-width: @desktop-width) {
+  .user-name {
+    margin-right: 34px;
+    margin-bottom: 5px;
+  }
+
   .user-name__container {
     width: 470px;
-    padding: 0;
+    padding: 13px 0 0 0;
+  }
+
+  .user-name__input--surname {
+    width: 340px;
+  }
+
+  .user-name__input--name {
+    width: 381px;
+  }
+
+  .user-name__input--patronymic {
+    width: 340px;
   }
 }

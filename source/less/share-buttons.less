@@ -1,6 +1,15 @@
+.share-buttons {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 71px 0 0 0;
+}
+
 .share-buttons__post,
 .share-buttons__abort {
-  padding: 0;
+  width: 280px;
+  padding-top: 17px;
+  padding-bottom: 17px;
 
   font-weight: 700;
   font-size: 18px;
@@ -8,10 +17,11 @@
 
   background-color: transparent;
   border: solid 3px;
-  border-radius: 5px;
+  border-radius: 100px;
 }
 
 .share-buttons__post {
+  margin-bottom: 12px;
   color: @pink-color;
 
   border-color: @pink-color;
@@ -43,7 +53,40 @@
   &:active {
     color: rgba(255, 255, 255, 0.3);
 
-    background-color: rgba(40, 54, 69, 0.3);
-    border-color: rgba(40, 54, 69, 0.3);
+    background-color: rgba(40, 54, 69, 1);
+    border-color: rgba(40, 54, 69, 1);
+    opacity: 0.3;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .share-buttons {
+    padding: 66px 0 0 0;
+  }
+
+  .share-buttons__post,
+  .share-buttons__abort {
+    width: 260px;
+  }
+
+  .share-buttons__post {
+    margin-bottom: 24px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .share-buttons {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 144px 0 0 0;
+  }
+
+  .share-buttons__post,
+  .share-buttons__abort {
+    width: 184px;
+  }
+
+  .share-buttons__post {
+    margin-bottom: 0;
   }
 }

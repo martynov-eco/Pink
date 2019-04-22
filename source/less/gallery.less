@@ -1,0 +1,295 @@
+.gallery__foto-panorama {
+  margin-bottom: 20px;
+}
+
+.gallery__link-panorama {
+  position: relative;
+
+  display: block;
+  width: auto;
+  max-width: 320px;
+  min-height: 140px; /*для сетки*/
+  margin: 0 auto;
+
+  overflow: hidden;
+  border: 2px dashed red;
+}
+
+.gallery__link-panorama::before {
+  content: attr(data-panorama-text);
+
+  position: absolute;
+  top: 0;
+  right: 20px;
+
+  width: 140px;
+  padding: 6px 10px 6px 10px;
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  color: #ffffff;
+
+  background-color: @pink-color;
+}
+
+.gallery__panorama-container {
+  width: 320px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  font-size: 14px;
+  line-height: 24px;
+  color: @base-color;
+}
+
+.gallery__container {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.gallery__message-top,
+.gallery__message-bottom {
+  width: 320px;
+  margin: 0 auto;
+  padding: 46px 20px 46px 20px;
+
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.gallery__message-bottom {
+  padding-top: 26px;
+  padding-bottom: 42px;
+}
+
+.gallery__message {
+  margin: 0 auto;
+}
+
+.gallery__foto {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  font-size: 14px;
+  line-height: 24px;
+  color: @base-color;
+}
+
+.gallery__link {
+  flex-shrink: 0;
+  width: 280px;
+  height: 180px;
+}
+
+.gallery__blockquote {
+  flex-grow: 1;
+  margin: 0;
+  padding: 18px 18px 20px 16px;
+
+  background-color: #f2f2f2;
+}
+
+.gallery__author {
+  margin-bottom: 9px;
+}
+
+.gallery__author-name {
+  font-weight: 700;
+  font-style: normal;
+}
+
+.gallery__time {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.gallery__text {
+  margin: 0;
+}
+
+.gallery__likes {
+  font-size: 12px;
+  color: @pink-color;
+  text-transform: uppercase;
+}
+
+.gallery__likes-button {
+  width: 13px;
+  height: 12px;
+  margin-right: 14px;
+
+  background-color: transparent;
+  background-image: url("../img/icon-heart.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  border: none;
+}
+
+@media (min-width: @tablet-width) {
+  .gallery__container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 660px;
+    padding: 0 20px;
+  }
+
+  .gallery__message-top,
+  .gallery__message-bottom {
+    width: 660px;
+
+    padding: 92px 20px 75px 20px;
+  }
+
+  .gallery__message-bottom {
+    padding: 48px 20px 68px 20px;
+  }
+
+  .gallery__message {
+    width: 440px;
+
+    font-size: 18px;
+  }
+
+  .gallery__foto-panorama {
+    margin-bottom: 50px;
+  }
+
+  .gallery__panorama-container {
+    width: 660px;
+    padding: 0 20px;
+  }
+
+  .gallery__link-panorama {
+    width: auto;
+    max-width: 700px;
+    min-height: 509px; /*для сетки*/
+    margin: 0 auto;
+  }
+
+  .gallery__link-panorama::before {
+    top: 56px;
+  }
+
+  .gallery__foto {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+  }
+
+  .gallery__foto:nth-child(odd) {
+    margin-right: 20px;
+  }
+
+  .gallery__link {
+    display: block;
+    width: 300px;
+    height: 300px;
+  }
+
+  .gallery__blockquote {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 155px;
+    padding: 24px 28px 20px 28px;
+  }
+
+  .gallery__author {
+    margin-bottom: 0;
+  }
+
+  .gallery__likes {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .gallery__likes-button {
+    align-self: center;
+    margin-right: 0;
+  }
+
+  .gallery__panorama-container .gallery__blockquote {
+    position: relative;
+
+    flex-direction: column;
+    min-height: 121px;
+    padding: 24px 18px 20px 28px;
+  }
+
+  .gallery__panorama-container .gallery__likes {
+    position: absolute;
+    top: 25px;
+    right: 29px;
+
+    justify-content: flex-start;
+  }
+
+  .gallery__panorama-container .gallery__likes-text {
+    margin-right: 14px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .gallery__panorama-container {
+    width: 960px;
+    padding: 0 10px;
+  }
+
+  .gallery__link-panorama {
+    width: auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 510px; /* для сетки */
+  }
+
+  .gallery__link-panorama::before {
+    right: 128px;
+  }
+
+  .gallery__container {
+    width: 960px;
+    padding: 0 10px;
+  }
+
+  .gallery__message-top {
+    padding-bottom: 85px;
+  }
+
+  .gallery__message-bottom {
+    padding-top: 6px;
+    padding-bottom: 65px;
+  }
+
+  .gallery__message {
+    width: 572px;
+  }
+
+  .gallery__foto {
+    margin-bottom: 54px;
+  }
+
+  .gallery__foto:nth-child(odd) {
+    margin-right: 0;
+  }
+
+  .gallery__foto:not(:nth-child(3n)) {
+    margin-right: 20px;
+  }
+
+  .gallery__link {
+    width: 300px;
+    height: 400px;
+  }
+
+  .gallery__panorama-container .gallery__blockquote {
+    min-height: 96px;
+  }
+}

@@ -1,15 +1,28 @@
 .user-contacts {
   order: 3;
+}
+
+.user-contacts__container {
+  width: 320px;
+  margin: 0 auto;
+  padding: 32px 20px 24px 20px;
+}
+
+.user-contacts__fieldset {
   margin: 0;
   padding: 0;
 
   border: none;
 }
 
-.user-contacts__container {
-  width: 280px;
-  margin: 0 auto;
-  padding: 0 20px;
+.user-contacts__legend {
+  display: none;
+
+  font-size: 14px;
+  line-height: 18px;
+  color: @pink-color;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .user-contacts__list {
@@ -17,15 +30,20 @@
 }
 
 .user-contacts__label {
+  display: block;
+  margin-bottom: 5px;
+  padding-left: 23px;
+
   font-size: 14px;
   line-height: 30px;
   color: @pink-color;
   text-transform: uppercase;
 }
 
-.user-contacts__field {
-  width: 276px;
-  padding: 0;
+.user-contacts__input {
+  width: 280px;
+  margin-bottom: 17px;
+  padding: 15px 10px 15px 20px;
 
   font-family: inherit;
   font-size: 18px;
@@ -33,25 +51,65 @@
   color: @base-color;
 
   border: solid 2px #e5e5e5;
+
+  &:hover {
+    border-color: @base-color;
+  }
+
+  &:focus {
+    border-color: @pink-color;
+    outline: none;
+  }
 }
 
-.user-contacts__field::placeholder {
+.user-contacts__input::placeholder {
   color: @base-color;
 }
 
 @media (min-width: @tablet-width) {
   .user-contacts__container {
-    width: 620px;
+    width: 660px;
     padding: 0 20px;
   }
 
-  .user-contacts__item {
-    display: flex;
-    flex-direction: column-reverse;
+  .user-contacts__fieldset {
+    padding: 38px 0 0 58px;
+    border: 2px solid #e6e6e6;
   }
 
-  .user-contacts__field {
-    width: 496px;
+  .user-contacts__legend {
+    display: block;
+  }
+
+  .user-contacts__item {
+    position: relative;
+
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 25px;
+  }
+
+  .user-contacts__label {
+    padding-left: 18px;
+  }
+
+  .user-contacts__item::after {
+    content: "";
+
+    position: absolute;
+    top: 2px;
+    right: 60px;
+
+    width: 60px;
+    height: 60px;
+
+    background-color: #e5e5e5;
+  }
+
+  .user-contacts__input {
+    width: 500px;
+    margin-bottom: 9px;
+    padding-right: 70px;
   }
 }
 
@@ -61,11 +119,28 @@
     padding: 0;
   }
 
+  .user-contacts__fieldset {
+    padding-top: 35px;
+    padding-bottom: 8px;
+  }
+
   .user-contacts__list {
     display: flex;
   }
 
-  .user-contacts__field {
-    width: 371px;
+  .user-contacts__item {
+    margin-bottom: 0;
+  }
+
+  .user-contacts__item:first-child {
+    margin-right: 70px;
+  }
+
+  .user-contacts__input {
+    width: 375px;
+  }
+
+  .user-contacts__item::after {
+    right: 2px;
   }
 }

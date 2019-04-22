@@ -1,3 +1,18 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /*служебные стили*/
 @import "fonts.less";
 @import "variable.less";
@@ -8,17 +23,21 @@
 @import "page-header.less";
 @import "main-nav.less";
 @import "site-list.less";
+@import "promo.less";
 @import "preview.less";
+@import "download.less";
 @import "questions.less";
 @import "features.less";
 @import "research.less";
 @import "reviews.less";
 @import "prices.less";
+@import "table-price.less";
 @import "contacts.less";
 @import "map.less";
+@import "slider.less";
 /*Страница с фото*/
 @import "page-title"; /*Стили дублируются для страниц фото и форма*/
-@import "fotogallery.less";
+@import "gallery.less";
 @import "share-buttons.less";
 @import "filter.less";
 @import "page-footer.less";
@@ -29,3 +48,5 @@
 @import "user-contacts.less";
 @import "user-app.less";
 @import "user-emotions.less";
+@import "modal-required.less";
+@import "modal-accept.less";

@@ -1,28 +1,42 @@
 .features {
-  color: #000000;
-  font-size: 18px;
-  line-height: 24px;
   text-align: center;
 
   background-color: #f2f2f2;
+  background-size: calc(100% + 30px) auto;
+  background-position-x: -15px;
+  background-image: url("../img/bg-triangle-white.svg");
+  background-repeat: no-repeat;
 }
 
 .features__container {
-  width: 280px;
+  width: 320px;
   margin: 0 auto;
-  padding: 0 20px;
-  min-height: 755px; /* Временно для сетки */
+  padding: 80px 20px 290px 20px;
 
   background-image: url("../img/iphone-screen-mobile@1x.png");
   background-repeat: no-repeat;
-  outline: 2px dashed red;
+  background-position: 50% 108%;
 }
 
 .features__list {
   .ls-reset();
 }
 
+.features__list-item {
+  margin-bottom: 33px;
+}
+
+.features__title {
+  margin: 0;
+  padding-bottom: 10px;
+
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+}
+
 .features__description {
+  margin: 0;
   font-size: 14px;
   line-height: 24px;
   color: @base-color;
@@ -32,9 +46,11 @@
   .features__container {
     display: flex;
     justify-content: flex-end;
-    width: 620px;
-    padding: 0 20px;
-    min-height: 435px; /* Временно для сетки */
+    width: 660px;
+    padding: 76px 20px 5px 20px;
+
+    background-image: url("../img/iphone-screen-3-tablet@1x.png");
+    background-position: 20px 5px;
   }
 
   .features__list {
@@ -42,23 +58,56 @@
 
     text-align: left;
   }
+
+  .features__list-item {
+    margin-bottom: 37px;
+  }
 }
 
 @media (min-width: @desktop-width) {
   .features__container {
     display: block;
-    width: 940px;
-    padding: 0 10px;
-    min-height: 500px; /* Временно для сетки */
+    width: 960px;
+    padding: 357px 20px 30px 20px;
+
+    background-image: url("../img/iphone-screen-1-desktop@1x.png"),
+      url("../img/iphone-screen-2-desktop@1x.png"),
+      url("../img/iphone-screen-3-desktop@1x.png");
+    background-position: 2% 0, 50.5% 0, 98.5% 0;
   }
 
   .features__list {
     display: flex;
-    width: 960px;
+    width: auto;
+    padding-left: 20px;
     text-align: center;
   }
 
-  .features__list-item {
-    width: 300px;
+  .features__list-item:nth-child(1) {
+    width: 240px;
+    margin-right: 57px;
+  }
+
+  .features__list-item:nth-child(2) {
+    width: 282px;
+    margin-right: 57px;
+  }
+
+  .features__list-item:nth-child(3) {
+    width: 245px;
+  }
+
+  .features__title {
+    margin-bottom: 16px;
+
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  .features__description {
+    padding: 0;
+
+    font-size: 18px;
+    line-height: 30px;
   }
 }

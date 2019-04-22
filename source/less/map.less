@@ -1,19 +1,27 @@
 .map__container {
-  width: 280px;
-  margin: 0 auto;
-  padding: 0 20px;
+  display: block;
+  height: 200px;
+
+  overflow: hidden;
+
+  background-image: url("../img/bg-triangle-white-footer.svg");
+  background-size: calc(100% + 30px) auto;
+  background-position-x: -15px;
+  background-repeat: no-repeat;
+
+  border-bottom: 1px solid black;
 }
 
 @media (min-width: @tablet-width) {
   .map__container {
-    width: 620px;
-    padding: 0 20px;
+    min-width: 660px;
+    height: 360px;
   }
 }
 
 @media (min-width: @desktop-width) {
   .map__container {
-    width: 940px;
-    padding: 0 10px;
+    min-width: 960px;
+    height: 480px;
   }
 }
