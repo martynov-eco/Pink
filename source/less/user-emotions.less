@@ -31,6 +31,15 @@
   color: @base-color;
 
   border: solid 2px #e5e5e5;
+
+  &:hover {
+    border-color: @base-color;
+  }
+
+  &:focus {
+    border-color: @pink-color;
+    outline: none;
+  }
 }
 
 .user-emotions__textarea::placeholder {
