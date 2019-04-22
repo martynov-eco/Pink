@@ -133,11 +133,37 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
+    margin-left: -40px;
   }
 
   .user-trips__item {
     width: 260px;
+    margin-left: 40px;
     margin-bottom: 42px;
+  }
+
+  .user-trips__item:nth-child(1) {
+    order: 1;
+  }
+
+  .user-trips__item:nth-child(2) {
+    order: 4;
+  }
+
+  .user-trips__item:nth-child(3) {
+    order: 2;
+  }
+
+  .user-trips__item:nth-child(4) {
+    order: 5;
+  }
+
+  .user-trips__item:nth-child(5) {
+    order: 3;
+  }
+
+  .user-trips__item:nth-child(6) {
+    order: 6;
   }
 
   .user-trips__label {
