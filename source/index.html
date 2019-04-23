@@ -6,6 +6,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HTML Academy: Пинк(Главная)</title>
   <link href="css/style.css" rel="stylesheet">
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=<4f5bc45d-a179-493c-ac12-24272700190e>&lang=ru_RU"
+    type="text/javascript"></script>
+  <script type="text/javascript">
+    ymaps.ready(function () {
+      var myMap = new ymaps.Map('map', {
+        center: [59.938631, 30.323055],
+        zoom: 15
+      }, {
+          searchControlProvider: 'yandex#search'
+        }),
+
+        // Создаём макет содержимого.
+        MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+          '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+        ),
+
+        myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+          hintContent: 'Собственный значок метки',
+          balloonContent: 'Это красивая метка'
+        }, {
+            // Опции.
+            // Необходимо указать данный тип макета.
+            iconLayout: 'default#image',
+            // Своё изображение иконки метки.
+            iconImageHref: 'img/map-marker.svg',
+            // Размеры метки.
+            iconImageSize: [36, 36],
+          });
+
+      myMap.geoObjects
+        .add(myPlacemark);
+    });
+  </script>
 </head>
 
 <body class="page-body">
@@ -42,14 +75,16 @@
   </header>
   <main>
     <section class="promo">
+      <h2 class="visually-hidden">Промо приложения</h2>
+      <picture>
+        <source media="(min-width: 960px)"
+          srcset="img/iphone-hand-desktop@1x.png 1x, img/iphone-hand-desktop@2x.png 2x">
+        <source media="(min-width: 660px)" srcset="img/iphone-hand-tablet@1x.png 1x, img/iphone-hand-tablet@2x.png 2x">
+        <img class="promo__image" src="img/iphone-hand-mobile@1x.png" srcset="img/iphone-hand-mobile@2x.png 2x"
+          alt="фотография телефона">
+      </picture>
       <div class="promo__container">
-        <h2 class="visually-hidden">Промо приложения</h2>
-        <div class="preview">
-          <div class="preview__container">
-            <img class="preview__image" src="img/iphone-hand-mobile@1x.png" alt="фотография телефона" width=""
-              height="">
-          </div>
-        </div>
+        <div class="preview"></div>
         <div class="download">
           <div class="download__container">
             <p class="download__text">Взгляните на жизнь иначе!</p>
@@ -278,10 +313,15 @@
       </div>
     </section>
     <section class="map">
-      <div class="map__container">
       <h2 class="visually-hidden">Схема проезда</h2>
-        <a class="map__link" href="https://yandex.ru/maps/-/CBF9nKAJWA"></a>
-      </div>
+      <a class="map__link" href="https://yandex.ru/maps/-/CBF9nKAJWA">
+        <div class="map__container" id="map"></div>
+        <picture>
+            <source media="(min-width: 960px)" srcset="img/bg-map-desktop@1x.jpg 1x, img/bg-map-desktop@2x.jpg 2x">
+            <source media="(min-width: 660px)" srcset="img/bg-map-tablet@1x.jpg 1x, img/bg-map-tablet@2x.jpg 2x">
+            <img class="map__image" src="img/bg-map-mobile@1x.jpg" srcset="img/bg-map-mobile@2x.jpg 2x" alt="Схема проезда">
+        </picture>
+      </a>
     </section>
   </main>
   <footer class="page-footer page-footer--index">

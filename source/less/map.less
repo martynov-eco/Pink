@@ -1,27 +1,54 @@
-.map__container {
-  display: block;
+.map {
   height: 200px;
 
   overflow: hidden;
+}
+
+.map__link {
+  position: relative;
+
+  display: block;
+}
+
+.map__link::before {
+  content: "";
+
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
 
   background-image: url("../img/bg-triangle-white-footer.svg");
   background-size: calc(100% + 30px) auto;
   background-position-x: -15px;
   background-repeat: no-repeat;
+}
 
-  border-bottom: 1px solid black;
+.map__container {
+  height: 200px;
+}
+
+.map__image {
+  display: block;
+  margin: 0 auto;
 }
 
 @media (min-width: @tablet-width) {
+  .map {
+    height: 360px;
+  }
+
   .map__container {
-    min-width: 660px;
     height: 360px;
   }
 }
 
 @media (min-width: @desktop-width) {
+  .map {
+    height: 480px;
+  }
+
   .map__container {
-    min-width: 960px;
     height: 480px;
   }
 }

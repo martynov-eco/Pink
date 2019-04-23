@@ -53,12 +53,17 @@
         <p class="gallery__message">Взгляните на фотографии, которые выкладывают пользователи!
           Видите,&nbsp;как&nbsp;не&nbsp;хватает&nbsp;ваших?</p>
       </div>
-      <div class="gallery__foto-panorama">
-        <a class="gallery__link-panorama" href="#" data-panorama-text="ПАНОРАМА ДНЯ">
-          <img src="" alt="фотография" width="" height="">
+      <div class="gallery__foto gallery__foto--panorama">
+        <a class="gallery__link gallery__link--panorama" href="#" data-panorama-text="ПАНОРАМА ДНЯ">
+          <picture>
+            <source media="(min-width: 960px)" srcset="img/panorama-desktop@1x.jpg 1x, img/panorama-desktop@2x.jpg 2x">
+            <source media="(min-width: 660px)" srcset="img/panorama-tablet@1x.jpg 1x, img/panorama-tablet@2x.jpg 2x">
+            <img class="gallery__image gallery__image--panorama" src="img/panorama-mobile@1x.jpg"
+              srcset="img/panorama-mobile@1x.jpg 2x" alt="Панорама дня">
+          </picture>
         </a>
-        <div class="gallery__panorama-container">
-          <blockquote class="gallery__blockquote">
+        <div class="gallery__blockquote-container">
+          <blockquote class="gallery__blockquote gallery__blockquote--panorama">
             <div class="gallery__author">
               <cite class="gallery__author-name">Анна</cite>
               <time class="gallery__time" datetime="2019-04-22T12:00">(5 минут назад)</time>
@@ -77,7 +82,11 @@
 
         <div class="gallery__foto">
           <a class="gallery__link" href="#">
-            <img src="img/photo-car-mobile@1x.jpg" alt="фотография" width="" height="">
+            <picture>
+              <source media="(min-width: 960px)" srcset="img/photo-car-desktop@1x.jpg 1x, img/photo-car-desktop@2x.jpg 2x">
+              <source media="(min-width: 660px)" srcset="img/photo-car-tablet@1x.jpg 1x, img/photo-car-tablet@2x.jpg 2x">
+              <img class="gallery__image" src="img/photo-car-mobile@1x.jpg" srcset="img/photo-car-mobile@1x.jpg 2x" alt="Панорама дня">
+            </picture>
           </a>
           <blockquote class="gallery__blockquote">
             <div class="gallery__author">
@@ -94,7 +103,11 @@
 
         <div class="gallery__foto">
           <a class="gallery__link" href="#">
-            <img src="img/photo-drumset-mobile@1x.jpg" alt="фотография" width="" height="">
+            <picture>
+                <source media="(min-width: 960px)" srcset="img/photo-drumset-desktop@1x.jpg 1x, img/photo-drumset-desktop@2x.jpg 2x">
+                <source media="(min-width: 660px)" srcset="img/photo-drumset-tablet@1x.jpg 1x, img/photo-drumset-tablet@2x.jpg 2x">
+                <img class="gallery__image" src="img/photo-drumset-mobile@1x.jpg" srcset="img/photo-drumset-mobile@1x.jpg 2x" alt="Панорама дня">
+            </picture>
           </a>
           <blockquote class="gallery__blockquote">
             <div class="gallery__author">
@@ -111,7 +124,11 @@
 
         <div class="gallery__foto">
           <a class="gallery__link" href="#">
-            <img src="img/photo-window-mobile@1x.jpg" alt="фотография" width="" height="">
+            <picture>
+                <source media="(min-width: 960px)" srcset="img/photo-window-desktop@1x.jpg 1x, img/photo-window-desktop@2x.jpg 2x">
+                <source media="(min-width: 660px)" srcset="img/photo-window-tablet@1x.jpg 1x, img/photo-window-tablet@2x.jpg 2x">
+                <img class="gallery__image" src="img/photo-window-mobile@1x.jpg" srcset="img/photo-window-mobile@1x.jpg 2x" alt="Панорама дня">
+            </picture>
           </a>
           <blockquote class="gallery__blockquote">
             <div class="gallery__author">
@@ -128,7 +145,11 @@
 
         <div class="gallery__foto">
           <a class="gallery__link" href="#">
-            <img src="img/photo-fair-mobile@1x.jpg" alt="фотография" width="" height="">
+            <picture>
+                <source media="(min-width: 960px)" srcset="img/photo-fair-desktop@1x.jpg 1x, img/photo-fair-desktop@2x.jpg 2x">
+                <source media="(min-width: 660px)" srcset="img/photo-fair-tablet@1x.jpg 1x, img/photo-fair-tablet@2x.jpg 2x">
+                <img class="gallery__image" src="img/photo-fair-mobile@1x.jpg" srcset="img/photo-fair-mobile@1x.jpg 2x" alt="Панорама дня">
+            </picture>
           </a>
           <blockquote class="gallery__blockquote">
             <div class="gallery__author">
@@ -145,7 +166,11 @@
 
         <div class="gallery__foto">
           <a class="gallery__link" href="#">
-            <img src="img/photo-pov-mobile@1x.jpg" alt="фотография" width="" height="">
+            <picture>
+                <source media="(min-width: 960px)" srcset="img/photo-pov-desktop@1x.jpg 1x, img/photo-pov-desktop@2x.jpg 2x">
+                <source media="(min-width: 660px)" srcset="img/photo-pov-tablet@1x.jpg 1x, img/photo-pov-tablet@2x.jpg 2x">
+                <img class="gallery__image" src="img/photo-pov-mobile@1x.jpg" srcset="img/photo-pov-mobile@1x.jpg 2x" alt="Панорама дня">
+            </picture>
           </a>
           <blockquote class="gallery__blockquote">
             <div class="gallery__author">
@@ -162,7 +187,11 @@
 
         <div class="gallery__foto">
           <a class="gallery__link" href="#">
-            <img src="img/photo-wing-mobile@1x.jpg" alt="фотография" width="" height="">
+              <picture>
+                  <source media="(min-width: 960px)" srcset="img/photo-wing-desktop@1x.jpg 1x, img/photo-wing-desktop@2x.jpg 2x">
+                  <source media="(min-width: 660px)" srcset="img/photo-wing-tablet@1x.jpg 1x, img/photo-wing-tablet@2x.jpg 2x">
+                  <img class="gallery__image" src="img/photo-wing-mobile@1x.jpg" srcset="img/photo-wing-mobile@1x.jpg 2x" alt="Панорама дня">
+              </picture>
           </a>
           <blockquote class="gallery__blockquote">
             <div class="gallery__author">
@@ -188,8 +217,11 @@
         <div class="filter__container">
           <h2 class="visually-hidden">Фильтр для фотографии</h2>
           <div class="filter__preview">
-            <img class="filter__preview-img" src="http://placehold.it/150x100" alt="фотография в фильтре" width=""
-              height="">
+              <picture>
+                  <source media="(min-width: 960px)" srcset="img/photo-road-desktop@1x.jpg 1x, img/photo-road-desktop@2x.jpg 2x">
+                  <source media="(min-width: 660px)" srcset="img/photo-road-tablet@1x.jpg 1x, img/photo-road-tablet@2x.jpg 2x">
+                  <img class="filter__preview-img" src="img/photo-road-mobile@1x.jpg" srcset="img/photo-road-mobile@1x.jpg 2x" alt="Панорама дня">
+              </picture>
           </div>
           <div class="filter__content">
             <div class="filter__buttons">

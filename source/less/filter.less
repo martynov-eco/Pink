@@ -12,8 +12,6 @@
 .filter__preview-img {
   width: 280px;
   height: 374px;
-
-  outline: 2px dashed red;
 }
 
 .filter__content {
@@ -77,6 +75,10 @@
   background-color: @base-color;
 }
 
+.filter__scale:active::before {
+  background-color: @pink-color;
+}
+
 .filter__scale::before {
   content: "";
 
@@ -92,10 +94,6 @@
   background-color: #f2f2f2;
 
   cursor: pointer;
-
-  &:hover {
-    background-color: @pink-color;
-  }
 }
 
 @media (max-width: @mobile-width-only) {
