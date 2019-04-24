@@ -11,7 +11,7 @@ ymaps.ready(function () {
       '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
     ),
 
-    myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+    myPlacemark = new ymaps.Placemark(([59.938467, 30.322536]), {
       hintContent: 'Собственный значок метки',
       balloonContent: 'Тут мы находимся!'
     }, {

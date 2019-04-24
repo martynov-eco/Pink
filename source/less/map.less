@@ -45,8 +45,8 @@
 .map__marker {
   position: absolute;
   left: 50%;
-  top: 50%;
-  z-index: -1;
+  top: 65%;
+  z-index: 1;
 
   width: 36px;
   height: 36px;
@@ -64,9 +64,13 @@
   }
 
   .map::before {
-    height: 67px;
+    height: 54px;
 
-    background-size: 100% 67px;
+    background-size: 100% 54px;
+  }
+
+  .map__marker {
+    top: 55%;
   }
 
   .map__interactive {
@@ -80,9 +84,9 @@
   }
 
   .map::before {
-    height: 100px;
+    height: 80px;
 
-    background-size: 100% 100px;
+    background-size: 100% 80px;
   }
 
   .map__interactive {
