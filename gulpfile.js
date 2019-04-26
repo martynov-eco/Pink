@@ -11,8 +11,36 @@ var csso = require("gulp-csso");
 var rename = require("gulp-rename");
 var imagemin = require("gulp-imagemin");
 var webp = require("gulp-webp");
+var svgstore = require("gulp-svgstore");
+var posthtml = require("gulp-posthtml");
+var include = require("posthtml-include");
 var del = require("del");
 
+/*оптимизация gif, jpg, png, svg*/
+gulp.task("images", function () {
+  return gulp.src("source/img/**/*.{png,jpg,svg}")
+    .pipe(imagemin([
+      imagemin.optipng({
+        optimizationLevel: 3
+      }),
+      imagemin.jpegtran({
+        progressive: true
+      }),
+      imagemin.svgo()
+    ]))
+    .pipe(gulp.dest("source/img"));
+});
+
+/*создание webp изображений*/
+gulp.task("webp", function () {
+  return gulp.src("source/img/**/*.{png,jpg}")
+    .pipe(webp({
+      quality: 90
+    }))
+    .pipe(gulp.dest("source/img"));
+});
+
+/*сборка less в css*/
 gulp.task("css", function () {
   return gulp.src("source/less/style.less")
     .pipe(plumber())
@@ -28,45 +56,31 @@ gulp.task("css", function () {
     .pipe(server.stream());
 });
 
-gulp.task("images", function () {
-  return gulp.src("source/img/**/*.{png,jpg,svg}")
-    .pipe(imagemin([
-      imagemin.optipng({
-        optimizationLevel: 3
-      }),
-      imagemin.jpegtran({
-        progressive: true
-      }),
-      imagemin.svgo()
-    ]))
-    .pipe(gulp.dest("source/img"));
-});
-
-gulp.task("webp", function () {
-  return gulp.src("source/img/**/*.{png,jpg}")
-    .pipe(webp({
-      quality: 90
+/*сборка svg спрайтов*/
+gulp.task("sprite", function () {
+  return gulp.src("source/img/logo-pink-*.svg")
+    .pipe(svgstore({
+      inlineSvg: true
     }))
+    .pipe(rename("sprite.svg"))
     .pipe(gulp.dest("source/img"));
 });
 
-gulp.task("server", function () {
-  server.init({
-    server: "source/", /*build*/
-    notify: false,
-    open: true,
-    cors: true,
-    ui: false
-  });
-
-  gulp.watch("source/less/**/*.less", gulp.series("css"));
-  gulp.watch("source/*.html").on("change", server.reload);
+/*шаблонизация*/
+gulp.task("html", function () {
+  return gulp.src("source/*.html")
+    .pipe(posthtml([
+      include()
+    ]))
+    .pipe(gulp.dest("source"));
 });
 
+/*удаляем папку build перед сборкой в прод*/
 gulp.task("clean", function () {
   return del("build");
 });
 
+/*копируем содержимое source в build*/
 gulp.task("copy", function () {
   return gulp.src([
       "source/fonts/**/*.{woff,woff2}",
@@ -80,6 +94,22 @@ gulp.task("copy", function () {
     .pipe(gulp.dest("build"));
 });
 
-gulp.task("build", gulp.series("clean", "copy", "css"));
+/*запуск локального сервера*/
+gulp.task("server", function () {
+  server.init({
+    server: "source/",
+    /*build/*/
+    notify: false,
+    open: true,
+    cors: true,
+    ui: false
+  });
+
+  gulp.watch("source/less/**/*.less", gulp.series("css"));
+  gulp.watch("source/*.html").on("change", server.reload);
+});
+
+/*сборка проекта*/
+gulp.task("build", gulp.series("clean", "copy", "css", "sprite", "html"));
 
 gulp.task("start", gulp.series("css", "server")); /*gulp.task("start", gulp.series("build", "server"));*/
