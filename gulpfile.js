@@ -49,33 +49,33 @@ gulp.task("css", function () {
     .pipe(postcss([
       autoprefixer()
     ]))
-    // .pipe(csso())
+    .pipe(csso())
     // .pipe(rename("style.min.css"))
     .pipe(sourcemap.write("."))
-    .pipe(gulp.dest("source/css")) /*build*/
+    .pipe(gulp.dest("build/css")) /*build*/
     .pipe(server.stream());
 });
 
 /*сборка svg спрайтов*/
 gulp.task("sprite", function () {
-  return gulp.src("source/img/logo-pink-*.svg")
+  return gulp.src("source/img/icons/*.svg")
     .pipe(svgstore({
       inlineSvg: true
     }))
     .pipe(rename("sprite.svg"))
-    .pipe(gulp.dest("source/img"));
+    .pipe(gulp.dest("build/img"));
 });
 
-/*шаблонизация*/
+/*инлайнинг svg спрайтов в шаблоны*/
 gulp.task("html", function () {
   return gulp.src("source/*.html")
     .pipe(posthtml([
       include()
     ]))
-    .pipe(gulp.dest("source"));
+    .pipe(gulp.dest("build"));
 });
 
-/*удаляем папку build перед сборкой в прод*/
+/*удаляем папку build перед сборкой*/
 gulp.task("clean", function () {
   return del("build");
 });
@@ -97,8 +97,7 @@ gulp.task("copy", function () {
 /*запуск локального сервера*/
 gulp.task("server", function () {
   server.init({
-    server: "source/",
-    /*build/*/
+    server: "build/",
     notify: false,
     open: true,
     cors: true,
@@ -106,10 +105,16 @@ gulp.task("server", function () {
   });
 
   gulp.watch("source/less/**/*.less", gulp.series("css"));
-  gulp.watch("source/*.html").on("change", server.reload);
+  gulp.watch("source/img/icons/*.svg", gulp.series("sprite", "html", "refresh"));
+  gulp.watch("source/*.html", gulp.series("html", "refresh"));
+});
+
+gulp.task("refresh", function (done) {
+  server.reload();
+  done();
 });
 
 /*сборка проекта*/
 gulp.task("build", gulp.series("clean", "copy", "css", "sprite", "html"));
 
-gulp.task("start", gulp.series("css", "server")); /*gulp.task("start", gulp.series("build", "server"));*/
+gulp.task("start", gulp.series("build", "server"));
