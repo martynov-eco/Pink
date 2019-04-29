@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv= "x-ua-compatible" content="ie=edge">
   <title>HTML Academy: Пинк(Форма)</title>
   <link href="css/style.css" rel="stylesheet">
 </head>
@@ -54,6 +55,7 @@
       </div>
     </section>
     <section class="form">
+      <h2 class="visually-hidden">Форма для конкурса Pink</h2>
       <div class="form__top-container">
         <p class="form__message">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу
           бонусную карту!&ensp;<span>Пожалуйста, заполните форму ниже:</span></p>
@@ -182,7 +184,7 @@
         <div class="user-emotions">
           <div class="user-emotions__container">
             <div class="user-emotions__field">
-              <label class="user-emotions__label" for="emotions">Опишите свои эмоции</label>
+              <label class="user-emotions__label" for="emo">Опишите свои эмоции</label>
               <textarea class="user-emotions__textarea" name="emo" id="emo"
                 placeholder="Можно прям в красках, не стесняясь в выражениях"></textarea>
             </div>
@@ -243,6 +245,8 @@
     </div>
   </section>
   <script src="js/script.js"></script>
+  <script src="js/svg4everybody.min.js"></script>
+  <script>svg4everybody();</script>
   <script src="js/modal.js"></script>
 </body>
 
