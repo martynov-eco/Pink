@@ -89,18 +89,26 @@
 
   .user-trips__container {
     width: 660px;
-    padding: 53px 20px 57px 20px;
+    padding: 64px 20px 67px 20px;
   }
 
   .user-trips__fieldset {
-    padding-top: 3px;
+    position: relative;
+
+    padding-top: 52px;
     padding-bottom: 7px;
 
     border: 2px solid #e5e5e5;
   }
 
   .user-trips__legend {
-    width: auto;
+    position: absolute;
+    top: -9px;
+    left: 88px;
+
+    width: 438px;
+
+    background-color: #ffffff;
   }
 
   .user-trips__label {
@@ -120,25 +128,29 @@
 @media (min-width: @desktop-width) {
   .user-trips__container {
     width: 940px;
-    padding: 56px 0 0 0;
+    padding: 66px 0 0 0;
   }
 
   .user-trips__fieldset {
-    padding-top: 3px;
+    padding-top: 51px;
     padding-bottom: 14px;
     padding-left: 58px;
+  }
+
+  .user-trips__legend {
+    left: 248px;
   }
 
   .user-trips__list {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    margin-left: -40px;
+    margin-left: -47px;
   }
 
   .user-trips__item {
     width: 260px;
-    margin-left: 40px;
+    margin-left: 50px;
     margin-bottom: 42px;
   }
 
@@ -152,10 +164,14 @@
 
   .user-trips__item:nth-child(3) {
     order: 2;
+
+    width: 245px;
   }
 
   .user-trips__item:nth-child(4) {
     order: 5;
+
+    width: 245px;
   }
 
   .user-trips__item:nth-child(5) {

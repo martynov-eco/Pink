@@ -53,16 +53,25 @@
   }
 
   .user-emotions__field {
+    position: relative;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 45px;
     padding-bottom: 7px;
 
     border: 2px solid #e6e6e6;
   }
 
   .user-emotions__label {
-    margin-bottom: 37px;
+    position: absolute;
+    top: -12px;
+    left: 178px;
+
+    width: 260px;
+
+    background-color: #ffffff;
   }
 
   .user-emotions__textarea {
@@ -74,11 +83,16 @@
 @media (min-width: @desktop-width) {
   .user-emotions__container {
     width: 940px;
-    padding: 54px 0 0 0;
+    padding: 67px 0 0 0;
   }
 
   .user-emotions__field {
+    padding-top: 40px;
     padding-bottom: 0;
+  }
+
+  .user-emotions__label {
+    left: 337px;
   }
 
   .user-emotions__textarea {

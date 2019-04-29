@@ -1,5 +1,5 @@
 .modal-accept {
-  display: block;
+  display: none;
 
   text-align: center;
 
@@ -12,24 +12,30 @@
   left: 50%;
   z-index: 150;
 
+  display: block;
+
   transform: translate(-50%, -50%);
 }
 
 .modal-accept__container {
   width: 320px;
   margin: 0 auto;
-  padding: 45px 20px 36px 20px;
+  padding: 35px 20px 36px 20px;
+
+  background-color: #ffffff;
 }
 
 .modal-accept__button-container {
   width: 320px;
   margin: 0 auto;
   padding: 48px 0 52px 0;
+
+  background-color: #ffffff;
 }
 
 .modal-accept__title {
   display: block;
-  margin: 0 auto 34px auto;
+  margin: 0 auto 24px auto;
 
   font-size: 18px;
   line-height: 24px;
@@ -96,5 +102,9 @@
 
   .modal-accept__message {
     width: 395px;
+  }
+
+  .modal-accept__button {
+    width: 460px;
   }
 }

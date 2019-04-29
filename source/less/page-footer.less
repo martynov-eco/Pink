@@ -16,6 +16,22 @@
   margin-bottom: 35px;
 }
 
+.page-footer__logo:hover svg {
+  fill: @pink-color;
+}
+
+.page-footer__logo:active svg {
+  fill: @base-color;
+}
+
+.page-footer__logo:active {
+  opacity: 0.3;
+}
+
+.page-footer__logo-svg--desktop {
+  display: none;
+}
+
 .page-footer__social-list {
   display: flex;
   margin: 0 0 38px 0;
@@ -24,7 +40,13 @@
   list-style: none;
 }
 
+.page-footer__social-list li:nth-child(2) {
+  margin-left: 11px;
+  margin-right: 11px;
+}
+
 .page-footer__social {
+  display: block;
   width: 52px;
   height: 52px;
 
@@ -36,13 +58,27 @@
   }
 
   &:active {
-    opacity: 0.1;
+    opacity: 0.3;
+    border-color: rgba(40, 54, 69, 0.1);
   }
 }
 
+.page-footer__social--tw {
+  background-image: url("../img/icon-twitter.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
 .page-footer__social--fb {
-  margin-left: 11px;
-  margin-right: 11px;
+  background-image: url("../img/icon-facebook.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.page-footer__social--pm {
+  background-image: url("../img/icon-youtube.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
 .page-footer__developers {
@@ -63,15 +99,15 @@
   align-self: center;
 }
 
-.page-footer__developers-link path {
+.page-footer__developers-link svg {
   fill: @pink-color;
 }
 
-.page-footer__developers-link:hover path {
+.page-footer__developers-link:hover svg {
   fill: @base-color;
 }
 
-.page-footer__developers-link:active path {
+.page-footer__developers-link:active svg {
   fill: rgba(40, 54, 69, 0.3);
 }
 
@@ -102,11 +138,11 @@
     margin: 0 auto 0 0;
   }
 
-  .page-footer__social--tw {
+  .page-footer__social-list li:nth-child(1) {
     margin-right: 11px;
   }
 
-  .page-footer__social--fb {
+  .page-footer__social-list li:nth-child(2) {
     margin-left: 0;
   }
 
@@ -133,6 +169,14 @@
 
   .page-footer__logo {
     margin-right: 238px;
+  }
+
+  .page-footer__logo-svg--nodesktop {
+    display: none;
+  }
+
+  .page-footer__logo-svg--desktop {
+    display: block;
   }
 
   .page-footer__developers-text {

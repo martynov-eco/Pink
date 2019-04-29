@@ -12,8 +12,6 @@
 .filter__preview-img {
   width: 280px;
   height: 374px;
-
-  outline: 2px dashed red;
 }
 
 .filter__content {
@@ -47,11 +45,11 @@
   }
 }
 
-.filter__button:hover .filter__button-path {
+.filter__button:hover svg {
   fill: @pink-color;
 }
 
-.filter__button:active .filter__button-path {
+.filter__button:active svg {
   fill: @base-color;
 }
 
@@ -59,11 +57,11 @@
   opacity: 1;
 }
 
-.filter__button--active .filter__button-path {
+.filter__button--active svg {
   fill: @pink-color;
 }
 
-.filter__scale-icon .filter__scale-icon-path {
+.filter__scale-icon .filter__scale-icon-path {/*поменять, убрать инлайн иконки для планшета и далее*/
   fill: @pink-color;
 }
 
@@ -75,6 +73,10 @@
   margin: 0 auto;
 
   background-color: @base-color;
+}
+
+.filter__scale:active::before {
+  background-color: @pink-color;
 }
 
 .filter__scale::before {
@@ -92,10 +94,6 @@
   background-color: #f2f2f2;
 
   cursor: pointer;
-
-  &:hover {
-    background-color: @pink-color;
-  }
 }
 
 @media (max-width: @mobile-width-only) {
@@ -183,6 +181,24 @@
     width: 24px;
     height: 22px;
     margin-right: 16px;
+
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+
+  .filter__scale-icon--crop {
+    background-image: url("../img/icon-editor-crop.svg");
+    background-size: 22px 22px;
+  }
+
+  .filter__scale-icon--fill {
+    background-image: url("../img/icon-editor-fill.svg");
+    background-size: 24px 22px;
+  }
+
+  .filter__scale-icon--contrast {
+    background-image: url("../img/icon-editor-contrast.svg");
+    background-size: 16px 16px;
   }
 
   .filter__scale--crop::before {
@@ -195,22 +211,6 @@
 
   .filter__scale--contrast::before {
     left: 96px;
-  }
-
-  .filter__scale-icon--crop svg {
-    width: 22px;
-    height: 22px;
-  }
-
-  .filter__scale-icon--fill svg {
-    width: 24px;
-    height: 22px;
-  }
-
-  .filter__scale-icon--contrast svg {
-    width: 16px;
-    height: 16px;
-    margin-left: 5px;
   }
 
   .filter__buttons {
@@ -269,21 +269,16 @@
     margin-right: 21px;
   }
 
-  .filter__scale-icon--crop svg {
-    width: 44px;
-    height: 44px;
+  .filter__scale-icon--crop {
+    background-size: 44px 44px;
   }
 
-  .filter__scale-icon--fill svg {
-    width: 48px;
-    height: 43px;
+  .filter__scale-icon--fill {
+    background-size: 48px 43px;
   }
 
-  .filter__scale-icon--contrast svg {
-    width: 32px;
-    height: 33px;
-    margin-left: 5px;
-    margin-top: 7px;
+  .filter__scale-icon--contrast {
+    background-size: 32px 33px;
   }
 
   .filter__scale {
