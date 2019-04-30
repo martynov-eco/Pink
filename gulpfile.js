@@ -15,6 +15,9 @@ var svgstore = require("gulp-svgstore");
 var posthtml = require("gulp-posthtml");
 var include = require("posthtml-include");
 var del = require("del");
+var uglify = require('gulp-uglify');
+var htmlmin = require('gulp-htmlmin');
+var pipeline = require('readable-stream').pipeline;
 
 /*оптимизация gif, jpg, png, svg*/
 gulp.task("images", function () {
@@ -28,7 +31,7 @@ gulp.task("images", function () {
       }),
       imagemin.svgo()
     ]))
-    .pipe(gulp.dest("source/img"));
+    .pipe(gulp.dest("build/img"));
 });
 
 /*создание webp изображений*/
@@ -37,7 +40,7 @@ gulp.task("webp", function () {
     .pipe(webp({
       quality: 90
     }))
-    .pipe(gulp.dest("source/img"));
+    .pipe(gulp.dest("build/img"));
 });
 
 /*сборка less в css*/
@@ -50,10 +53,19 @@ gulp.task("css", function () {
       autoprefixer()
     ]))
     .pipe(csso())
-    // .pipe(rename("style.min.css"))
+    .pipe(rename("style.min.css"))
     .pipe(sourcemap.write("."))
-    .pipe(gulp.dest("build/css")) /*build*/
+    .pipe(gulp.dest("build/css"))
     .pipe(server.stream());
+});
+
+/*минификация js файлов*/
+gulp.task('compress', function () {
+  return pipeline(
+    gulp.src("source/js/*.js"),
+    uglify(),
+    gulp.dest("build/js")
+  );
 });
 
 /*сборка svg спрайтов*/
@@ -75,6 +87,13 @@ gulp.task("html", function () {
     .pipe(gulp.dest("build"));
 });
 
+/*минификация html*/
+gulp.task('minify', () => {
+  return gulp.src("source/*.html")
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest("build"));
+});
+
 /*удаляем папку build перед сборкой*/
 gulp.task("clean", function () {
   return del("build");
@@ -83,12 +102,12 @@ gulp.task("clean", function () {
 /*копируем содержимое source в build*/
 gulp.task("copy", function () {
   return gulp.src([
-      "source/fonts/**/*.{woff,woff2}",
-      "source/img/**",
-      "source/js/**",
-      "source/*.ico",
-      "source/*.html"
-    ], {
+    "source/fonts/**/*.{woff,woff2}",
+    "source/img/**",
+    "source/js/**",
+    "source/*.ico",
+    "source/*.html"
+  ], {
       base: "source"
     })
     .pipe(gulp.dest("build"));
@@ -115,6 +134,6 @@ gulp.task("refresh", function (done) {
 });
 
 /*сборка проекта*/
-gulp.task("build", gulp.series("clean", "copy", "css", "sprite", "html"));
+gulp.task("build", gulp.series("clean", "copy", "css", "images", "webp", "compress", "sprite", "html", "minify"));
 
 gulp.task("start", gulp.series("build", "server"));
