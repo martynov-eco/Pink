@@ -9,8 +9,6 @@
     <link rel="preload" href="fonts/opensansbold.woff2" as="font" crossorigin="anonymous">
     <link rel="preload" href="fonts/opensanslight.woff2" as="font" crossorigin="anonymous">
     <link href="css/style.min.css" rel="stylesheet">
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=4f5bc45d-a179-493c-ac12-24272700190e&lang=ru_RU"
-      type="text/javascript"></script>
   </head>
   <body class="page-body">
     <div style="display: none">
@@ -58,11 +56,11 @@
               <p class="download__text">Взгляните на жизнь иначе!</p>
               <a class="download__button" href="https://www.apple.com/ru/itunes/" target="blanc">Скачать приложение</a>
               <ul class="download__list">
-                <li><a class="download__ios" href="https://www.apple.com/ru/itunes/" target="blanc" aria-label="ios"></a>
+                <li><a class="download__link download--ios" href="https://www.apple.com/ru/itunes/" target="blanc" aria-label="ios"></a>
                 </li>
-                <li><a class="download__android" href="https://play.google.com/" target="blanc" aria-label="android"></a>
+                <li><a class="download__link download--android" href="https://play.google.com/" target="blanc" aria-label="android"></a>
                 </li>
-                <li><a class="download__microsoft" href="https://www.microsoft.com/ru-ru/" target="blanc"
+                <li><a class="download__link download--microsoft" href="https://www.microsoft.com/ru-ru/" target="blanc"
                     aria-label="microsoft"></a></li>
               </ul>
               <p class="download__description">Доступно для iPhone, iPad, Android, Windows&nbsp;Phone, OS X, Windows 8</p>
@@ -104,7 +102,7 @@
       <section class="research">
         <div class="research__container">
           <div class="research__timer">
-            <span class="research_timer-text">24</span>
+            <span class="research__timer-text">24</span>
           </div>
           <div class="research__info">
             <h2 class="visually-hidden">Исследования ученых</h2>
@@ -326,6 +324,7 @@
     <script src="js/picturefill.min.js"></script>
     <script src="js/svg4everybody.min.js"></script>
     <script>svg4everybody();</script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=4f5bc45d-a179-493c-ac12-24272700190e&lang=ru_RU" type="text/javascript"></script>
     <script src="js/api-map.js"></script>
   </body>
 </html>
