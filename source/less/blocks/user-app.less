@@ -46,20 +46,6 @@
   color: @base-color;
 
   cursor: pointer;
-
-  &::before {
-    content: "";
-
-    position: absolute;
-    left: 0;
-    top: 0;
-
-    width: 40px;
-    height: 40px;
-
-    border: solid 2px #e5e5e5;
-    border-radius: 50%;
-  }
 }
 
 .user-app__label:hover::before {
@@ -70,10 +56,28 @@
   border-color: @pink-color;
 }
 
-.user-app__input:checked + .user-app__radio-indicator {
+.user-app__radio-indicator {
   position: absolute;
-  left: 12px;
-  top: 12px;
+  left: 0;
+  top: 0;
+
+  width: 40px;
+  height: 40px;
+
+  border: solid 2px #e5e5e5;
+  border-radius: 50%;
+}
+
+.user-app__input:focus + .user-app__radio-indicator {
+  outline: thin dotted;
+}
+
+.user-app__input:checked + .user-app__radio-indicator::before {
+  content: "";
+
+  position: absolute;
+  left: 10px;
+  top: 10px;
 
   width: 15px;
   height: 15px;
@@ -117,12 +121,8 @@
     padding-left: 119px;
   }
 
-  .user-app__label::before {
+  .user-app__radio-indicator {
     left: 60px;
-  }
-
-  .user-app__input:checked + .user-app__radio-indicator {
-    left: 72px;
   }
 }
 
@@ -144,11 +144,7 @@
     padding-left: 134px;
   }
 
-  .user-app__label::before {
+  .user-app__radio-indicator {
     left: 75px;
-  }
-
-  .user-app__input:checked + .user-app__radio-indicator {
-    left: 87px;
   }
 }

@@ -47,31 +47,35 @@
   color: @base-color;
 
   cursor: pointer;
-
-  &::before {
-    content: "";
-
-    position: absolute;
-    left: 0;
-    top: 0;
-
-    width: 40px;
-    height: 40px;
-
-    background-color: #ffffff;
-    border: solid 2px #e5e5e5;
-  }
 }
 
-.user-trips__label:hover::before {
+.user-trips__label:hover .user-trips__checkbox-indicator {
   border-color: @base-color;
 }
 
-.user-trips__label:active::before {
+.user-trips__label:active .user-trips__checkbox-indicator {
   border-color: @pink-color;
 }
 
-.user-trips__input:checked + .user-trips__checkbox-indicator {
+.user-trips__checkbox-indicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 40px;
+  height: 40px;
+
+  background-color: #ffffff;
+  border: solid 2px #e5e5e5;
+}
+
+.user-trips__input:focus + .user-trips__checkbox-indicator {
+  outline: thin dotted;
+}
+
+.user-trips__input:checked + .user-trips__checkbox-indicator::before {
+  content: "";
+
   position: absolute;
   left: 9px;
   top: 9px;
@@ -81,6 +85,8 @@
 
   background: url("../img/icon-check.svg") no-repeat;
 }
+
+
 
 @media (min-width: @tablet-width) {
   .user-trips {
@@ -117,13 +123,8 @@
     padding-left: 117px;
   }
 
-  .user-trips__label::before {
+  .user-trips__checkbox-indicator {
     left: 58px;
-  }
-
-  .user-trips__input:checked + .user-trips__checkbox-indicator {
-    left: 67px;
-    top: 11px;
   }
 }
 
@@ -189,12 +190,7 @@
     padding-right: 0;
   }
 
-  .user-trips__label::before {
+  .user-trips__checkbox-indicator {
     left: 0;
-  }
-
-  .user-trips__input:checked + .user-trips__checkbox-indicator {
-    left: 9px;
-    top: 11px;
   }
 }
