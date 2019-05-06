@@ -1,21 +1,21 @@
 .modal-required {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 150;
+
   display: none;
 
   text-align: center;
 
   background-color: #ffffff;
   box-shadow: 0 7px 15px 0 rgba(0, 1, 1, 0.15);
+
+  transform: translate(-50%, -50%);
 }
 
 .modal-required--open {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  z-index: 150;
-
   display: block;
-
-  transform: translate(-50%, -50%);
 }
 
 .modal-required__container {

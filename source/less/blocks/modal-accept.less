@@ -1,20 +1,20 @@
 .modal-accept {
-  display: none;
-
-  text-align: center;
-
-  box-shadow: 0 7px 15px 0 rgba(0, 1, 1, 0.15);
-}
-
-.modal-accept--open {
   position: fixed;
   top: 50%;
   left: 50%;
   z-index: 150;
 
-  display: block;
+  display: none;
+
+  text-align: center;
+
+  box-shadow: 0 7px 15px 0 rgba(0, 1, 1, 0.15);
 
   transform: translate(-50%, -50%);
+}
+
+.modal-accept--open {
+  display: block;
 }
 
 .modal-accept__container {
