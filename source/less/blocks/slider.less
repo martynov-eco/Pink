@@ -1,90 +1,75 @@
 .slider {
   position: relative;
-
-  overflow: hidden;
 }
 
-.slider__toggles {
-  display: flex;
-  width: 56px;
-  margin: 0 auto;
+.slider__item {
+  min-height: 210px;
+
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
 
-.slider__toggle {
-  width: 6px;
-  height: 6px;
-  margin-right: 19px;
-  padding: 0;
-  box-sizing: content-box;
-
-  background-color: rgba(40, 54, 69, 0.3);
-  border: none;
-  border-radius: 50%;
-
-  &:hover {
-    background-color: rgba(40, 54, 69, 0.5);
+@keyframes fade {
+  from {
+    opacity: .4
   }
 
-  &:active {
-    background-color: rgba(40, 54, 69, 0.1);
+  to {
+    opacity: 1
   }
 }
 
-.slider__toggle:last-child {
-  margin-right: 0;
-}
-
-.slider__toggle--current {
-  box-shadow: 0 0 0 3px @base-color;
-}
-
-.slider__arrow {
+.slider__prev,
+.slider__next {
+  cursor: pointer;
   position: absolute;
-  top: 51.5%;
+  top: 50%;
 
   display: none;
-  width: 22px;
-  height: 41px;
-  padding: 0;
+  width: auto;
+    padding: 16px;
 
-  background-color: transparent;
-  background-repeat: no-repeat;
-  border: none;
-  opacity: 0.3;
+  color: gray;
+  font-weight: bold;
+  font-size: 18px;
 
-  &:hover {
-    opacity: 0.6;
-  }
-
-  &:active {
-    opacity: 0.1;
-  }
+  transition: 0.6s ease;
 }
 
-.slider__arrow--left {
-  left: 10px;
-
-  background-image: url("..//img/icon-review-arrow-left.svg");
+.slider__next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
 }
 
-.slider__arrow--right {
-  right: 10px;
-
-  background-image: url("..//img/icon-review-arrow-right.svg");
+.slider__prev:hover,
+.slider__next:hover {
+  background-color: @base-color;
 }
 
-@media (min-width: @tablet-width) {
-  .slider__toggles--prices {
-    display: none;
-  }
+.slider__dots {
+  text-align: center;
+}
+
+.slider__dots-item {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 2px;
+  background-color: #ddd;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.slider__dots-item--active,
+.slider__dots-item:hover {
+  background-color: #aaa;
+  border: 2px solid @base-color;
 }
 
 @media (min-width: @desktop-width) {
-  .slider__toggles {
-    display: none;
-  }
-
-  .slider__arrow {
+  .slider__prev,
+  .slider__next {
     display: block;
   }
 }

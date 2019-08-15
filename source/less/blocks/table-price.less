@@ -5,8 +5,16 @@
 }
 
 @media (max-width: @mobile-width-only) {
-  .table-price {
+  #product-2:checked ~ .table-price {
     transform: translateX(-280px);
+  }
+
+  #product-1:checked ~ .table-price {
+    transform: translateX(0);
+  }
+
+  #product-3:checked ~ .table-price {
+    transform: translateX(-560px);
   }
 }
 
